@@ -40,7 +40,7 @@
                     <div id="sortBox" class="optionBox">
                         Sort
                         <select id="sortSelector">
-                            <option value="order">Order</option>
+                            <option value="default">Default</option>
                             <option value="alphabetical">Alphabetical</option>
                             <option value="availability">Availability</option>
                         </select>
@@ -53,246 +53,252 @@
                 </div>
             </div>
         </div>
-        <div class="grid-container">
+        <div id="grid-container">
 
-            <a href="https://facebook.com/" class="grid-item" data-website="facebook" data-status="available"
-                data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="1"> <img src="logos/facebook.png"
-                    alt="facebook"></img>
+            <a target="_blank" target="_blank" href="https://facebook.com/" class="grid-item" data-website="facebook"
+                data-status="1available" data-social="y" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="1"> <img
+                    src="logos/facebook.png" alt="facebook"></img>
             </a>
 
-            <a href="https://instagram.com/" class="grid-item" data-website="instagram" data-status="available"
-                data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
-                data-music="n" data-photography="y" data-dev="n" data-order="2"> <img src="logos/instagram.webp"
-                    alt="instagram"></img>
+            <a target="_blank" href="https://instagram.com/" class="grid-item" data-website="instagram"
+                data-status="2manual" data-social="y" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="y" data-music="n" data-photography="y" data-dev="n" data-order="2"> <img
+                    src="logos/instagram.webp" alt="instagram"></img>
             </a>
 
-            <a href="https://twitter.com/" class="grid-item" data-website="twitter" data-status="taken" data-social="y"
-                data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n" data-music="n"
-                data-photography="n" data-dev="n" data-order="3"> <img src="logos/twitter.png" alt="Twitter"></img>
+            <a target="_blank" href="https://twitter.com/" class="grid-item" data-website="twitter"
+                data-status="3invalid" data-social="y" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="3"> <img
+                    src="logos/twitter.png" alt="Twitter"></img>
             </a>
 
-            <a href="https://snapchat.com/" class="grid-item" data-website="snapchat" data-status="available"
-                data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="4"> <img src="logos/snapchat.png"
-                    alt="snapchat"></img>
+            <a target="_blank" href="https://snapchat.com/" class="grid-item" data-website="snapchat"
+                data-status="6unknown" data-social="y" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="4"> <img
+                    src="logos/snapchat.png" alt="snapchat"></img>
             </a>
 
-            <a href="https://mastodon.social/" class="grid-item" data-website="mastodon" data-status="invalid"
-                data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="5"> <img src="logos/mastodon.png"
-                    alt="mastodon"></img>
+            <a target="_blank" href="https://mastodon.social/" class="grid-item" data-website="mastodon"
+                data-status="6unknown" data-social="y" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="5"> <img
+                    src="logos/mastodon.png" alt="mastodon"></img>
             </a>
 
-            <a href="https://tiktok.com/" class="grid-item" data-website="tiktok" data-status="available"
+            <a target="_blank" href="https://tiktok.com/" class="grid-item" data-website="tiktok" data-status="6unknown"
                 data-social="y" data-video="y" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
                 data-music="y" data-photography="n" data-dev="n" data-order="6"> <img src="logos/tiktok.png"
                     alt="tiktok"></img>
             </a>
 
-            <a href="https://youtube.com/" class="grid-item" data-website="youtube" data-status="available"
+            <a target="_blank" href="https://youtube.com/" class="grid-item" data-website="youtube"
+                data-status="6unknown" data-social="n" data-video="y" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-order="7"> <img
+                    src="logos/youtube.png" alt="youtube"></img>
+            </a>
+
+            <a target="_blank" href="https://vimeo.com/" class="grid-item" data-website="vimeo" data-status="6unknown"
                 data-social="n" data-video="y" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="y" data-photography="n" data-dev="n" data-order="7"> <img src="logos/youtube.png"
-                    alt="youtube"></img>
+                data-music="n" data-photography="n" data-dev="n" data-order="8"> <img src="logos/vimeo.png"
+                    alt="vimeo"></img>
             </a>
 
-            <a href="https://vimeo.com/" class="grid-item" data-website="vimeo" data-status="available" data-social="n"
-                data-video="y" data-blogging="n" data-professional="n" data-gaming="n" data-art="n" data-music="n"
-                data-photography="n" data-dev="n" data-order="8"> <img src="logos/vimeo.png" alt="vimeo"></img>
+            <a target="_blank" href="https://linkedin.com/" class="grid-item" data-website="linkedin"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="9"> <img
+                    src="logos/linkedin.png" alt="linkedin"></img>
             </a>
 
-            <a href="https://linkedin.com/" class="grid-item" data-website="linkedin" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="9"> <img src="logos/linkedin.png"
-                    alt="linkedin"></img>
+            <a target="_blank" href="https://patreon.com/" class="grid-item" data-website="patreon"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="10"> <img
+                    src="logos/patreon.webp" alt="patreon"></img>
             </a>
 
-            <a href="https://patreon.com/" class="grid-item" data-website="patreon" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="10"> <img src="logos/patreon.webp"
-                    alt="patreon"></img>
-            </a>
-
-            <a href="https://fiverr.com/" class="grid-item" data-website="fiverr" data-status="available"
+            <a target="_blank" href="https://fiverr.com/" class="grid-item" data-website="fiverr" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
                 data-music="n" data-photography="n" data-dev="n" data-order="11"> <img src="logos/fiverr.png"
                     alt="fiverr"></img>
             </a>
 
-            <a href="https://github.com/" class="grid-item" data-website="github" data-status="available"
+            <a target="_blank" href="https://github.com/" class="grid-item" data-website="github" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
                 data-music="n" data-photography="n" data-dev="y" data-order="12"> <img src="logos/github.png"
                     alt="github"></img>
             </a>
 
-            <a href="https://gitlab.com/" class="grid-item" data-website="gitlab" data-status="available"
+            <a target="_blank" href="https://gitlab.com/" class="grid-item" data-website="gitlab" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
                 data-music="n" data-photography="n" data-dev="y" data-order="13"> <img src="logos/gitlab.png"
                     alt="gitlab"></img>
             </a>
 
-            <a href="https://reddit.com/" class="grid-item" data-website="reddit" data-status="available"
+            <a target="_blank" href="https://reddit.com/" class="grid-item" data-website="reddit" data-status="6unknown"
                 data-social="y" data-video="n" data-blogging="y" data-professional="n" data-gaming="n" data-art="n"
                 data-music="n" data-photography="n" data-dev="n" data-order="14"> <img src="logos/reddit.png"
                     alt="reddit"></img>
             </a>
 
-            <a href="https://medium.com/" class="grid-item" data-website="medium" data-status="available"
+            <a target="_blank" href="https://medium.com/" class="grid-item" data-website="medium" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="y" data-professional="n" data-gaming="n" data-art="n"
                 data-music="n" data-photography="n" data-dev="n" data-order="15"> <img src="logos/medium.png"
                     alt="medium"></img>
             </a>
 
-            <a href="https://blogger.com/" class="grid-item" data-website="blogger" data-status="available"
-                data-social="n" data-video="n" data-blogging="y" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="16"> <img src="logos/blogger.png"
-                    alt="blogger"></img>
+            <a target="_blank" href="https://blogger.com/" class="grid-item" data-website="blogger/blogspot"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="y" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="16"> <img
+                    src="logos/blogger.png" alt="blogger"></img>
             </a>
 
-            <a href="https://wordpress.com/" class="grid-item" data-website="wordpress" data-status="available"
-                data-social="n" data-video="n" data-blogging="y" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="17"> <img src="logos/wordpress.png"
-                    alt="wordpress"></img>
+            <a target="_blank" href="https://wordpress.com/" class="grid-item" data-website="wordpress"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="y" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="17"> <img
+                    src="logos/wordpress.png" alt="wordpress"></img>
             </a>
 
-            <a href="https://hackernews.com/" class="grid-item" data-website="hackernews" data-status="available"
-                data-social="n" data-video="n" data-blogging="y" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="18"> <img src="logos/hackernews.png"
-                    alt="hackernews"></img>
+            <a target="_blank" href="https://hackernews.com/" class="grid-item" data-website="hackernews"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="y" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-order="18"> <img
+                    src="logos/hackernews.png" alt="hackernews"></img>
             </a>
 
-            <a href="https://producthunt.com/" class="grid-item" data-website="producthunt" data-status="available"
-                data-social="n" data-video="y" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="19"> <img src="logos/producthunt.png"
-                    alt="producthunt"></img>
+            <a target="_blank" href="https://producthunt.com/" class="grid-item" data-website="producthunt"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="19"> <img
+                    src="logos/producthunt.png" alt="producthunt"></img>
             </a>
 
-            <a href="https://steamcommunity.com/" class="grid-item" data-website="steam" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="20"> <img src="logos/steam.png"
-                    alt="steam"></img>
+            <a target="_blank" href="https://steamcommunity.com/" class="grid-item" data-website="steam"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="y" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="20"> <img
+                    src="logos/steam.png" alt="steam"></img>
             </a>
 
-            <a href="https://xboxgamertag.com/" class="grid-item" data-website="xbox" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="21"> <img src="logos/xbox.png"
-                    alt="xbox"></img>
+            <a target="_blank" href="https://xboxgamertag.com/" class="grid-item" data-website="xbox"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="y" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="21"> <img
+                    src="logos/xbox.png" alt="xbox"></img>
             </a>
 
-            <a href="https://minecraftuuid.com/" class="grid-item" data-website="minecraft" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="22"> <img src="logos/minecraft.png"
-                    alt="minecraft"></img>
+            <a target="_blank" href="https://minecraftuuid.com/" class="grid-item" data-website="minecraft"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="y" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="22"> <img
+                    src="logos/minecraft.png" alt="minecraft"></img>
             </a>
 
-            <a href="https://roblox.com/" class="grid-item" data-website="roblox" data-status="available"
+            <a target="_blank" href="https://roblox.com/" class="grid-item" data-website="roblox" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
                 data-music="n" data-photography="n" data-dev="n" data-order="23"> <img src="logos/roblox.png"
                     alt="roblox"></img>
             </a>
 
-            <a href="https://osu.ppy.sh/" class="grid-item" data-website="osu" data-status="available" data-social="n"
-                data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n" data-music="n"
-                data-photography="n" data-dev="n" data-order="24"> <img src="logos/osu.png" alt="osu"></img>
+            <a target="_blank" href="https://osu.ppy.sh/" class="grid-item" data-website="osu" data-status="6unknown"
+                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
+                data-music="n" data-photography="n" data-dev="n" data-order="24"> <img src="logos/osu.png"
+                    alt="osu"></img>
             </a>
 
-            <a href="https://deviantart.com/" class="grid-item" data-website="deviantart" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
-                data-music="n" data-photography="y" data-dev="n" data-order="25"> <img src="logos/deviantart.jpg"
-                    alt="deviantart"></img>
+            <a target="_blank" href="https://deviantart.com/" class="grid-item" data-website="deviantart"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="y" data-music="n" data-photography="y" data-dev="n" data-order="25"> <img
+                    src="logos/deviantart.jpg" alt="deviantart"></img>
             </a>
 
-            <a href="https://spotify.com/" class="grid-item" data-website="spotify" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="y" data-photography="n" data-dev="n" data-order="26"> <img src="logos/spotify.png"
-                    alt="spotify"></img>
+            <a target="_blank" href="https://spotify.com/" class="grid-item" data-website="spotify"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-order="26"> <img
+                    src="logos/spotify.png" alt="spotify"></img>
             </a>
 
-            <a href="https://soundcloud.com/" class="grid-item" data-website="soundcloud" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="y" data-photography="n" data-dev="n" data-order="27"> <img src="logos/soundcloud.png"
-                    alt="soundcloud"></img>
+            <a target="_blank" href="https://soundcloud.com/" class="grid-item" data-website="soundcloud"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-order="27"> <img
+                    src="logos/soundcloud.png" alt="soundcloud"></img>
             </a>
 
-            <a href="https://genius.com/" class="grid-item" data-website="genius user" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="y" data-photography="n" data-dev="n" data-order="28"> <img src="logos/genius_user.png"
-                    alt="genius user" img>
+            <a target="_blank" href="https://genius.com/" class="grid-item" data-website="genius user"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-order="28"> <img
+                    src="logos/genius_user.png" alt="genius user" img>
             </a>
 
-            <a href="https://genius.com/artists" class="grid-item" data-website="genius artist" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
-                data-music="y" data-photography="n" data-dev="n" data-order="29"> <img src="logos/genius_artist.png"
-                    alt="genius artist"></img>
+            <a target="_blank" href="https://genius.com/artists/" class="grid-item" data-website="genius artist"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+                data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-order="29"> <img
+                    src="logos/genius_artist.png" alt="genius artist"></img>
             </a>
 
-            <a href="https://unsplash.com/" class="grid-item" data-website="unsplash" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
-                data-music="n" data-photography="y" data-dev="n" data-order="30"> <img src="logos/unsplash.png"
-                    alt="unsplash"></img>
+            <a target="_blank" href="https://unsplash.com/" class="grid-item" data-website="unsplash"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="y" data-music="n" data-photography="y" data-dev="n" data-order="30"> <img
+                    src="logos/unsplash.png" alt="unsplash"></img>
             </a>
 
-            <a href="https://flickr.com/" class="grid-item" data-website="flickr" data-status="available"
+            <a target="_blank" href="https://flickr.com/" class="grid-item" data-website="flickr" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
                 data-music="n" data-photography="y" data-dev="n" data-order="31"> <img src="logos/flickr.png"
                     alt="flickr"></img>
             </a>
 
-            <a href="https://vsco.co/" class="grid-item" data-website="vsco" data-status="available" data-social="n"
-                data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y" data-music="n"
-                data-photography="y" data-dev="n" data-order="32"> <img src="logos/vsco.png" alt="vsco"></img>
+            <a target="_blank" href="https://vsco.co/" class="grid-item" data-website="vsco" data-status="6unknown"
+                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
+                data-music="n" data-photography="y" data-dev="n" data-order="32"> <img src="logos/vsco.png"
+                    alt="vsco"></img>
             </a>
 
-            <a href="https://npmjs.com/" class="grid-item" data-website="npm" data-status="available" data-social="n"
-                data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n" data-music="n"
-                data-photography="n" data-dev="y" data-order="33"> <img src="logos/npm.png" alt="npm"></img>
-            </a>
-
-            <a href="https://pypi.org/" class="grid-item" data-website="pypi" data-status="available" data-social="n"
-                data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n" data-music="n"
-                data-photography="n" data-dev="y" data-order="34"> <img src="logos/pypi.png" alt="pypi"></img>
-            </a>
-
-            <a href="https://rubygems.org/" class="grid-item" data-website="rubygems" data-status="available"
+            <a target="_blank" href="https://npmjs.com/" class="grid-item" data-website="npm" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="35"> <img src="logos/rubygems.jpeg"
-                    alt="rubygems"></img>
+                data-music="n" data-photography="n" data-dev="y" data-order="33"> <img src="logos/npm.png"
+                    alt="npm"></img>
             </a>
 
-            <a href="https://kaggle.com/" class="grid-item" data-website="kaggle" data-status="available"
+            <a target="_blank" href="https://pypi.org/" class="grid-item" data-website="pypi" data-status="6unknown"
+                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
+                data-music="n" data-photography="n" data-dev="y" data-order="34"> <img src="logos/pypi.png"
+                    alt="pypi"></img>
+            </a>
+
+            <a target="_blank" href="https://rubygems.org/" class="grid-item" data-website="rubygems"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-order="35"> <img
+                    src="logos/rubygems.jpeg" alt="rubygems"></img>
+            </a>
+
+            <a target="_blank" href="https://kaggle.com/" class="grid-item" data-website="kaggle" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
                 data-music="n" data-photography="n" data-dev="y" data-order="36"> <img src="logos/kaggle.png"
                     alt="kaggle"></img>
             </a>
 
-            <a href="https://codecademy.com/" class="grid-item" data-website="codecademy" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="37"> <img src="logos/codecademy.png"
-                    alt="codecademy"></img>
+            <a target="_blank" href="https://codecademy.com/" class="grid-item" data-website="codecademy"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-order="37"> <img
+                    src="logos/codecademy.png" alt="codecademy"></img>
             </a>
 
-            <a href="https://geeksforgeeks.org/" class="grid-item" data-website="geeksforgeeks" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="38"> <img src="logos/geeksforgeeks.png"
-                    alt="geeksforgeeks"></img>
+            <a target="_blank" href="https://geeksforgeeks.org/" class="grid-item" data-website="geeksforgeeks"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-order="38"> <img
+                    src="logos/geeksforgeeks.png" alt="geeksforgeeks"></img>
             </a>
 
-            <a href="https://leetcode.com/" class="grid-item" data-website="leetcode" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="39"> <img src="logos/leetcode.png"
-                    alt="leetcode"></img>
+            <a target="_blank" href="https://leetcode.com/" class="grid-item" data-website="leetcode"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-order="39"> <img
+                    src="logos/leetcode.png" alt="leetcode"></img>
             </a>
 
-            <a href="https://codepen.io/" class="grid-item" data-website="codepen" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="40"> <img src="logos/codepen.png"
-                    alt="codepen"></img>
+            <a target="_blank" href="https://codepen.io/" class="grid-item" data-website="codepen"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-order="40"> <img
+                    src="logos/codepen.png" alt="codepen"></img>
             </a>
 
-            <a href="https://hackerrank.com/" class="grid-item" data-website="hackerrank" data-status="available"
-                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="41"> <img src="logos/hackerrank.png"
-                    alt="hackerrank"></img>
+            <a target="_blank" href="https://hackerrank.com/" class="grid-item" data-website="hackerrank"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-order="41"> <img
+                    src="logos/hackerrank.png" alt="hackerrank"></img>
             </a>
 
         </div>

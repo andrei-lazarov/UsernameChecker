@@ -1,13 +1,59 @@
 function updateLinks(username) {
-    const facebookItem = document.getElementById("facebookitem");
-    if (facebookItem) {
-        const facebookLink = facebookItem.querySelector("a");
-        if (facebookLink) {
-            facebookLink.href = `https://www.facebook.com/${username}`;
+    const links = document.getElementById("grid-container").querySelectorAll("a");
+
+    for (const link of links) {
+        link.classList.add("loading");
+        link.dataset.status = "5loading";
+
+        let currentHref;
+        if (link.dataset.website == 'snapchat')
+            currentHref = `https://snapchat.com/add/${username}`;
+        else if (link.dataset.website == 'reddit')
+            currentHref = `https://reddit.com/user/${username}`;
+        else if (link.dataset.website == 'mastodon')
+            currentHref = `https://mastodon.social/@${username}`;
+        else if (link.dataset.website == 'tiktok')
+            currentHref = `https://tiktok.com/@${username}`;
+        else if (link.dataset.website == 'linkedin')
+            currentHref = `https://linkedin.com/in/${username}`;
+        else if (link.dataset.website == 'blogger/blogspot')
+            currentHref = `https://${username}.blogspot.com/`;
+        else if (link.dataset.website == 'wordpress')
+            currentHref = `https://${username}.wordpress.com/`;
+        else if (link.dataset.website == 'producthunt')
+            currentHref = `https://producthunt.com/@${username}`;
+        else if (link.dataset.website == 'steam')
+            currentHref = `https://steamcommunity.com/id/${username}`;
+        else if (link.dataset.website == 'xbox')
+            currentHref = `https://xboxgamertag.com/search/${username}`;
+        else if (link.dataset.website == 'minecraft')
+            currentHref = `https://minecraftuuid.com/?search=${username}`;
+        else if (link.dataset.website == 'roblox')
+            currentHref = `https://www.roblox.com/user.aspx?username=${username}`;
+        else if (link.dataset.website == 'osu')
+            currentHref = `https://osu.ppy.sh/users/${username}`;
+        else if (link.dataset.website == 'spotify')
+            currentHref = `https://open.spotify.com/user/${username}`;
+        else if (link.dataset.website == 'pypi')
+            currentHref = `https://pypi.org/user/${username}`;
+        else if (link.dataset.website == 'rubygems')
+            currentHref = `https://rubygems.org/profiles/${username}`;
+        else if (link.dataset.website == 'codecademy')
+            currentHref = `https://www.codecademy.com/profiles/${username}`;
+        else if (link.dataset.website == 'geeksforgeeks')
+            currentHref = `https://auth.geeksforgeeks.org/user/${username}`;
+        else if (link.dataset.website == 'hackerrank')
+            currentHref = `https://www.hackerrank.com/profile/${username}`;
+        else {
+            currentHref = link.getAttribute("href");
+
+            // Remove previous username
+            const usernameRegex = /\/([^/]+)$/; // Matches everything after the last slash
+            currentHref = currentHref.replace(usernameRegex, "/") + username;
         }
+        link.setAttribute("href", currentHref);
     }
 }
-
 
 function submit() {
     const button = document.getElementById('checkButton');
@@ -21,17 +67,21 @@ function submit() {
         window.history.replaceState({}, document.title, `${window.location.origin}${window.location.pathname}?${params.toString()}`);
     }
 
-    const scoreText = document.getElementById("score");
-    scoreText.textContent = `Username ${username} is available on 30% of the websites`;
-
     const hiddenUntilInput = document.getElementById("hiddenUntilInput");
     hiddenUntilInput.classList.remove("hidden");
 
     const top = document.getElementById("top");
     top.classList.add("small");
 
+    updateLinks(username);
+    const sortSelector = document.getElementById('sortSelector');
+    sortSelector.value = 'availability';
     // await request(username);
+
+    const scoreText = document.getElementById("score");
+    scoreText.textContent = `Username ${username} is available on 30% of the websites`;
 }
+
 
 function getInputFromURL() {
     const params = new URLSearchParams(window.location.search);

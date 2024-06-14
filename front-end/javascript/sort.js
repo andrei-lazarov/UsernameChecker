@@ -18,9 +18,9 @@ sortSelector.addEventListener("change", function () {
             case "availability":
                 const availabilityA = a.dataset.status.toLowerCase();
                 const availabilityB = b.dataset.status.toLowerCase();
-                comparisonValue = availabilityA > availabilityB ? 1 : -1;
+                comparisonValue = availabilityA.localeCompare(availabilityB);
                 break;
-            case "order":
+            case "default":
                 comparisonValue = a.dataset.order - b.dataset.order;
                 break;
         }
@@ -28,7 +28,7 @@ sortSelector.addEventListener("change", function () {
         return isAscending ? comparisonValue : -comparisonValue;
     });
 
-    const gridContainer = document.querySelector(".grid-container");
+    const gridContainer = document.getElementById("grid-container");
     gridContainer.innerHTML = "";
     gridItemsArray.forEach(function (item) {
         gridContainer.appendChild(item);
