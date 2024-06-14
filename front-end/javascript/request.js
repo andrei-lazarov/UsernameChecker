@@ -1,7 +1,4 @@
-
-async function requestUsername() {
-    const usernameInput = document.getElementById('usernameInput').value;
-
+async function request(username) {
     try {
         const response = await fetch('http://localhost:3000/request', {
             method: 'POST',
