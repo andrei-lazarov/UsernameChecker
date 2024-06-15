@@ -1,6 +1,12 @@
 import puppeteer from "puppeteer";
 
-export const checkTiktokUsername = async (username) => {
+const isValid = (username) => {
+    const pattern = /^(?!\.)[a-zA-Z0-9.]{5,50}(?<!\.com)$/;
+    return pattern.test(username);
+}
+
+const isAvailable = async (username) => {
+    console.log(`tiktok start check ${username}`);
     const browser = await puppeteer.launch({
         headless: true,
         defaultViewport: null,
@@ -24,12 +30,24 @@ export const checkTiktokUsername = async (username) => {
         return false;
     });
 
-    console.log(`Username ${username} is ${foundElement ? 'available' : 'taken'}`);
-
     await browser.close();
+    console.log(`tiktok finish check ${username}`);
+    return foundElement;
 };
 
+export const check = async (username) => {
+    if (!isValid(username)) {
+        return 'invalid';
+    }
+
+    // if (await sanityCheck() === 'failed') {
+    //     return 'manual';
+    // }
+
+    return await isAvailable(username) ? 'available' : 'taken';
+}
+
 // Try with available and taken usernames
-checkTiktokUsername("fajfhldka");
-checkTiktokUsername("mandrutz");
+// checkTiktokUsername("fajfhldka");
+// checkTiktokUsername("mandrutz");
 

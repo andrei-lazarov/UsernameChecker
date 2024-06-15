@@ -1,6 +1,12 @@
 import puppeteer from "puppeteer";
 
-export const checkInstagramUsername = async (username) => {
+const isValid = (username) => {
+    const pattern = /^(?!\.)[a-zA-Z0-9.]{5,50}(?<!\.com)$/;
+    return pattern.test(username);
+}
+
+const isAvailable = async (username) => {
+    console.log(`instagram start check ${username}`);
     const browser = await puppeteer.launch({
         headless: true,
         defaultViewport: null,
@@ -29,11 +35,23 @@ export const checkInstagramUsername = async (username) => {
         return false;
     }, errorMessage);
 
-    console.log(`Username ${username} is ${foundElement ? 'available' : 'taken'}`);
-
     await browser.close();
+    console.log(`instagram finish check ${username}`);
+    return foundElement;
 };
 
+export const check = async (username) => {
+    if (!isValid(username)) {
+        return 'invalid';
+    }
+
+    // if (await sanityCheck() === 'failed') {
+    //     return 'manual';
+    // }
+
+    return await isAvailable(username) ? 'available' : 'taken';
+}
+
 // Try with available and taken usernames
-checkInstagramUsername("fajfhldkajlfkdajflkj");
-checkInstagramUsername("andrei.lazarov");
+// checkInstagramUsername("fajfhldkajlfkdajflkj");
+// checkInstagramUsername("andrei.lazarov");

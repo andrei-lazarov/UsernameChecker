@@ -1,13 +1,18 @@
 import puppeteer from "puppeteer";
 
-export const checkGithubUsername = async (username) => {
+const isValid = (username) => {
+    const pattern = /^(?!\.)[a-zA-Z0-9.]{5,50}(?<!\.com)$/;
+    return pattern.test(username);
+}
+
+const isAvailable = async (username) => {
+    console.log(`github start check ${username}`);
     const browser = await puppeteer.launch({
         headless: true,
         defaultViewport: null,
     });
 
     const page = await browser.newPage();
-
     await page.goto(`https://www.github.com/${username}/`, {
         waitUntil: "domcontentloaded",
     });
@@ -18,11 +23,23 @@ export const checkGithubUsername = async (username) => {
         return (element !== null);
     });
 
-    console.log(`Username ${username} is ${foundElement ? 'available' : 'taken'}`);
-
     await browser.close();
+    console.log(`github finish check ${username}`);
+    return foundElement;
 };
 
+export const check = async (username) => {
+    if (!isValid(username)) {
+        return 'invalid';
+    }
+
+    // if (await sanityCheck() === 'failed') {
+    //     return 'manual';
+    // }
+
+    return await isAvailable(username) ? 'available' : 'taken';
+}
+
 // Try with available and taken usernames
-checkGithubUsername("fajfhldkajlfkdajflkj");
-checkGithubUsername("andrei-lazarov");
+// checkGithubUsername("fajfhldkajlfkdajflkj");
+// checkGithubUsername("andrei-lazarov");

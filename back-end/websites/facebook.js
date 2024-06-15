@@ -6,11 +6,12 @@ const isValid = (username) => {
 }
 
 const isAvailable = async (username) => {
+    console.log(`facebook start check ${username}`);
     const browser = await puppeteer.launch({
         headless: true,
         defaultViewport: null,
     });
-    console.log(`Checking ${username}`);
+
     const page = await browser.newPage();
     await page.goto(`https://www.facebook.com/${username}/`, {
         waitUntil: "domcontentloaded",
@@ -31,7 +32,7 @@ const isAvailable = async (username) => {
     });
 
     await browser.close();
-
+    console.log(`facebook finish check ${username}`);
     return foundElement;
 }
 
@@ -62,9 +63,9 @@ export const check = async (username) => {
         return 'invalid';
     }
 
-    if (await sanityCheck() === 'failed') {
-        return 'failed';
-    }
+    // if (await sanityCheck() === 'failed') {
+    //     return 'manual';
+    // }
 
     return await isAvailable(username) ? 'available' : 'taken';
 }
