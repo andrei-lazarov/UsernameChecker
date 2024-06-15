@@ -5,7 +5,7 @@ searchInput.addEventListener("keyup", function () {
     const searchTerm = searchInput.value.toLowerCase();
 
     gridItems.forEach(function (item) {
-        const itemText = item.dataset.website.toLowerCase();
+        const itemText = item.id.toLowerCase();
         const match = itemText.includes(searchTerm);
 
         if (match) {

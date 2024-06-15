@@ -6,43 +6,43 @@ function updateLinks(username) {
         link.dataset.status = "5loading";
 
         let currentHref;
-        if (link.dataset.website == 'snapchat')
+        if (link.id == 'snapchat')
             currentHref = `https://snapchat.com/add/${username}`;
-        else if (link.dataset.website == 'reddit')
+        else if (link.id == 'reddit')
             currentHref = `https://reddit.com/user/${username}`;
-        else if (link.dataset.website == 'mastodon')
+        else if (link.id == 'mastodon')
             currentHref = `https://mastodon.social/@${username}`;
-        else if (link.dataset.website == 'tiktok')
+        else if (link.id == 'tiktok')
             currentHref = `https://tiktok.com/@${username}`;
-        else if (link.dataset.website == 'linkedin')
+        else if (link.id == 'linkedin')
             currentHref = `https://linkedin.com/in/${username}`;
-        else if (link.dataset.website == 'blogger/blogspot')
+        else if (link.id == 'blogger/blogspot')
             currentHref = `https://${username}.blogspot.com/`;
-        else if (link.dataset.website == 'wordpress')
+        else if (link.id == 'wordpress')
             currentHref = `https://${username}.wordpress.com/`;
-        else if (link.dataset.website == 'producthunt')
+        else if (link.id == 'producthunt')
             currentHref = `https://producthunt.com/@${username}`;
-        else if (link.dataset.website == 'steam')
+        else if (link.id == 'steam')
             currentHref = `https://steamcommunity.com/id/${username}`;
-        else if (link.dataset.website == 'xbox')
+        else if (link.id == 'xbox')
             currentHref = `https://xboxgamertag.com/search/${username}`;
-        else if (link.dataset.website == 'minecraft')
+        else if (link.id == 'minecraft')
             currentHref = `https://minecraftuuid.com/?search=${username}`;
-        else if (link.dataset.website == 'roblox')
+        else if (link.id == 'roblox')
             currentHref = `https://www.roblox.com/user.aspx?username=${username}`;
-        else if (link.dataset.website == 'osu')
+        else if (link.id == 'osu')
             currentHref = `https://osu.ppy.sh/users/${username}`;
-        else if (link.dataset.website == 'spotify')
+        else if (link.id == 'spotify')
             currentHref = `https://open.spotify.com/user/${username}`;
-        else if (link.dataset.website == 'pypi')
+        else if (link.id == 'pypi')
             currentHref = `https://pypi.org/user/${username}`;
-        else if (link.dataset.website == 'rubygems')
+        else if (link.id == 'rubygems')
             currentHref = `https://rubygems.org/profiles/${username}`;
-        else if (link.dataset.website == 'codecademy')
+        else if (link.id == 'codecademy')
             currentHref = `https://www.codecademy.com/profiles/${username}`;
-        else if (link.dataset.website == 'geeksforgeeks')
+        else if (link.id == 'geeksforgeeks')
             currentHref = `https://auth.geeksforgeeks.org/user/${username}`;
-        else if (link.dataset.website == 'hackerrank')
+        else if (link.id == 'hackerrank')
             currentHref = `https://www.hackerrank.com/profile/${username}`;
         else {
             currentHref = link.getAttribute("href");

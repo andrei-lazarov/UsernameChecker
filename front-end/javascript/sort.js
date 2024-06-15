@@ -11,8 +11,8 @@ sortSelector.addEventListener("change", function () {
 
         switch (sortBy) {
             case "alphabetical":
-                const websiteA = a.dataset.website.toLowerCase();
-                const websiteB = b.dataset.website.toLowerCase();
+                const websiteA = a.id.toLowerCase();
+                const websiteB = b.id.toLowerCase();
                 comparisonValue = websiteA.localeCompare(websiteB);
                 break;
             case "availability":
@@ -38,5 +38,5 @@ sortSelector.addEventListener("change", function () {
 sortDirectionButton.addEventListener("click", function () {
     isAscending = !isAscending;
     sortDirectionButton.textContent = isAscending ? "⬆" : "⬇";
-    sortSelector.dispatchEvent(new Event("change"));
+    sortSelector.dispatchEvent(new Event("change")); // trigger sort
 });
