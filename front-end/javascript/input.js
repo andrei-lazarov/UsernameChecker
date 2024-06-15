@@ -55,7 +55,7 @@ function updateLinks(username) {
     }
 }
 
-function submit() {
+async function submit() {
     const button = document.getElementById('checkButton');
     button.disabled = true;
 
@@ -74,9 +74,9 @@ function submit() {
     top.classList.add("small");
 
     updateLinks(username);
-    const sortSelector = document.getElementById('sortSelector');
-    sortSelector.value = 'availability';
-    // await request(username);
+    // const sortSelector = document.getElementById('sortSelector');
+    // sortSelector.value = 'availability';
+    await request(username);
 
     const scoreText = document.getElementById("score");
     scoreText.textContent = `Username ${username} is available on 30% of the websites`;

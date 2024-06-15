@@ -6,12 +6,12 @@ import * as twitter from "./websites/twitter.js";
 
 export const check = async (username) => {
     let result = {
-        username: username,
-        facebook: "unknown",
-        github: "unknown",
-        instagram: "unknown",
-        tiktok: "unknown",
-        twitter: "unknown",
+        // username: username,
+        facebook: "6unknown",
+        github: "6unknown",
+        instagram: "6unknown",
+        tiktok: "6unknown",
+        twitter: "6unknown",
     };
 
     // Create promises for each check

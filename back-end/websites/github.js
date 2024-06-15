@@ -30,14 +30,14 @@ const isAvailable = async (username) => {
 
 export const check = async (username) => {
     if (!isValid(username)) {
-        return 'invalid';
+        return '3invalid';
     }
 
     // if (await sanityCheck() === 'failed') {
     //     return 'manual';
     // }
 
-    return await isAvailable(username) ? 'available' : 'taken';
+    return await isAvailable(username) ? '1available' : '4taken';
 }
 
 // Try with available and taken usernames

@@ -1,3 +1,15 @@
+function updateAvailability(website, newStatus) {
+    console.log(`${website} is ${newStatus}`);
+    websiteElement = document.getElementById(website);
+    websiteElement.dataset.status = newStatus;
+    websiteElement.classList.remove('available');
+    websiteElement.classList.remove('manual');
+    websiteElement.classList.remove('invalid');
+    websiteElement.classList.remove('taken');
+    websiteElement.classList.remove('loading');
+    websiteElement.classList.add(newStatus.slice(1));
+}
+
 async function request(username) {
     try {
         const response = await fetch('http://localhost:3000/request', {
@@ -5,15 +17,20 @@ async function request(username) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ usernameInput: usernameInput })
+            body: JSON.stringify({ usernameInput: username })
         });
 
-        const result = await response.text();
-        // console.log(response);
-        console.log(result);
-        alert(result);
+        const resultString = await response.text();
+        // console.log(resultString);
+        const result = JSON.parse(resultString);
+        for (const website in result) {
+            updateAvailability(website, result[website]);
+        }
+        // sortSelector.dispatchEvent(new Event("change")); // trigger sort
+        // alert(result);
     } catch (error) {
         console.error('Error:', error);
         alert('Failed to check username availability');
     }
 }
+
