@@ -41,11 +41,13 @@ function updateLinks(username) {
         else if (link.id == 'codecademy')
             currentHref = `https://www.codecademy.com/profiles/${username}`;
         else if (link.id == 'geeksforgeeks')
-            currentHref = `https://auth.geeksforgeeks.org/user/${username}`;
+            currentHref = `https://geeksforgeeks.org/user/${username}`;
         else if (link.id == 'hackerrank')
             currentHref = `https://www.hackerrank.com/profile/${username}`;
         else if (link.id == 'hackernews')
             currentHref = `https://news.ycombinator.com/user?id=${username}`;
+        else if (link.id == 'npm')
+            currentHref = `https://npmjs.com/~${username}`;
         else {
             currentHref = link.getAttribute("href");
 

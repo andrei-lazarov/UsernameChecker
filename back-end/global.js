@@ -18,6 +18,27 @@ import * as hackernews from "./websites/hackernews.js"
 import * as producthunt from "./websites/producthunt.js"
 import * as steam from "./websites/steam.js"
 import * as xbox from "./websites/xbox.js"
+import * as minecraft from "./websites/minecraft.js"
+import * as roblox from "./websites/roblox.js"
+import * as osu from "./websites/osu.js"
+import * as deviantart from "./websites/deviantart.js"
+import * as spotify from "./websites/spotify.js"
+import * as soundcloud from "./websites/soundcloud.js"
+import * as genius_user from "./websites/genius_user.js"
+import * as genius_artist from "./websites/genius_artist.js"
+import * as unsplash from "./websites/unsplash.js"
+import * as flickr from "./websites/flickr.js"
+import * as vsco from "./websites/vsco.js"
+import * as npm from "./websites/npm.js"
+import * as pypi from "./websites/pypi.js"
+import * as rubygems from "./websites/rubygems.js"
+import * as kaggle from "./websites/kaggle.js"
+import * as codecademy from "./websites/codecademy.js"
+import * as geeksforgeeks from "./websites/geeksforgeeks.js"
+import * as leetcode from "./websites/leetcode.js"
+import * as codepen from "./websites/codepen.js"
+import * as hackerrank from "./websites/hackerrank.js"
+import * as pinterest from "./websites/pinterest.js"
 
 // export const check = async (username) => {
 //     let result = {
@@ -76,6 +97,27 @@ const functionMap = {
     producthunt: producthunt.check,
     steam: steam.check,
     xbox: xbox.check,
+    minecraft: minecraft.check,
+    roblox: roblox.check,
+    osu: osu.check,
+    deviantart: deviantart.check,
+    spotify: spotify.check,
+    soundcloud: soundcloud.check,
+    genius_user: genius_user.check,
+    genius_artist: genius_artist.check,
+    unsplash: unsplash.check,
+    flickr: flickr.check,
+    vsco: vsco.check,
+    npm: npm.check,
+    pypi: pypi.check,
+    rubygems: rubygems.check,
+    kaggle: kaggle.check,
+    codecademy: codecademy.check,
+    geeksforgeeks: geeksforgeeks.check,
+    leetcode: leetcode.check,
+    codepen: codepen.check,
+    hackerrank: hackerrank.check,
+    pinterest: pinterest.check,
 }
 
 export const checkSingle = async (website, username) => {
@@ -86,5 +128,5 @@ export const checkSingle = async (website, username) => {
     return result;
 }
 
-const test1 = 'andrei';
-console.log(await xbox.check(test1));
+// const test1 = 'andreilzararsav';
+// console.log(await pinterest.check(test1));
