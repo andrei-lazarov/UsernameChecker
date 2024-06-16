@@ -6,6 +6,18 @@ import * as twitter from "./websites/twitter.js";
 import * as snapchat from "./websites/snapchat.js"
 import * as mastodon from "./websites/mastodon.js"
 import * as youtube from "./websites/youtube.js"
+import * as vimeo from "./websites/vimeo.js"
+import * as patreon from "./websites/patreon.js"
+import * as fiverr from "./websites/fiverr.js"
+import * as gitlab from "./websites/gitlab.js"
+import * as reddit from "./websites/reddit.js"
+import * as medium from "./websites/medium.js"
+import * as blogger from "./websites/blogger.js"
+import * as wordpress from "./websites/wordpress.js"
+import * as hackernews from "./websites/hackernews.js"
+import * as producthunt from "./websites/producthunt.js"
+import * as steam from "./websites/steam.js"
+import * as xbox from "./websites/xbox.js"
 
 // export const check = async (username) => {
 //     let result = {
@@ -52,6 +64,18 @@ const functionMap = {
     snapchat: snapchat.check,
     mastodon: mastodon.check,
     youtube: youtube.check,
+    vimeo: vimeo.check,
+    patreon: patreon.check,
+    fiverr: fiverr.check,
+    gitlab: gitlab.check,
+    reddit: reddit.check,
+    medium: medium.check,
+    "blogger/blogspot": blogger.check,
+    wordpress: wordpress.check,
+    hackernews: hackernews.check,
+    producthunt: producthunt.check,
+    steam: steam.check,
+    xbox: xbox.check,
 }
 
 export const checkSingle = async (website, username) => {
@@ -63,4 +87,4 @@ export const checkSingle = async (website, username) => {
 }
 
 const test1 = 'andrei';
-console.log(await youtube.check(test1));
+console.log(await xbox.check(test1));

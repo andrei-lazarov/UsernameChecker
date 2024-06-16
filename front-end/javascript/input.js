@@ -44,6 +44,8 @@ function updateLinks(username) {
             currentHref = `https://auth.geeksforgeeks.org/user/${username}`;
         else if (link.id == 'hackerrank')
             currentHref = `https://www.hackerrank.com/profile/${username}`;
+        else if (link.id == 'hackernews')
+            currentHref = `https://news.ycombinator.com/user?id=${username}`;
         else {
             currentHref = link.getAttribute("href");
 

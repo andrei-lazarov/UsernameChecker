@@ -1,37 +1,33 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
+    // to do
     const pattern = /^(?!\.)[a-zA-Z0-9.\-_]{3,30}$/;
     return pattern.test(username);
 }
 
 const isAvailable = async (username) => {
-    console.log(`youtube start check ${username}`);
+    console.log(`steam start check ${username}`);
     const browser = await puppeteer.launch({
         headless: true,
         defaultViewport: null,
     });
 
     const page = await browser.newPage();
-    await page.goto(`https://www.youtube.com/${username}/`, {
+    // const customUserAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+    // await page.setUserAgent(customUserAgent);
+    await page.goto(`https://steamcommunity.com/id/${username}`, {
         waitUntil: "domcontentloaded",
     });
 
-    // Decline cookies
-    const declineButton = 'button[aria-label="Reject all"]'
-    await page.waitForSelector(declineButton);
-    await page.click(declineButton);
-    console.log('waiting');
-    await page.waitForNetworkIdle();
-    console.log('checking');
-
     let usernameAvailable = false;
     const title = await page.title();
-    if (title == '404 Not Found')
+    // console.log(title);
+    if (title === 'Steam Community :: Error')
         usernameAvailable = true;
 
     await browser.close();
-    console.log(`youtube finish check ${username}`);
+    console.log(`steam finish check ${username}`);
     return usernameAvailable;
 }
 
