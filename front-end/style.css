@@ -2,7 +2,6 @@
 body {
     color: #222;
     background: #fff;
-
 }
 
 #title {
@@ -12,6 +11,11 @@ body {
 #grid-container {
     background-color: rgb(238, 238, 238);
     border: 1px solid rgb(105, 105, 105);
+}
+
+#legend-title {
+    padding: 2px;
+    border: 2px solid #fff;
 }
 
 /* Dark theme */
@@ -29,6 +33,11 @@ body {
     #grid-container {
         background-color: rgb(73, 73, 73);
         border: 1px solid rgb(105, 105, 105);
+    }
+
+    #legend-title {
+        padding: 2px;
+        border: 2px solid #1e1e1e;
     }
 }
 
@@ -148,6 +157,25 @@ body {
     background-color: rgb(255, 255, 255);
     border: 2px dashed rgb(211, 211, 211);
     opacity: 0.7;
+}
+
+.unknown {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(211, 211, 211);
+}
+
+.legend-tag {
+    color: black;
+    padding: 2px;
+}
+
+#legend {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 3px;
+    max-width: 1000px;
+    margin: auto;
 }
 
 img {

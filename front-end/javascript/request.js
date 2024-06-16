@@ -1,5 +1,5 @@
 function updateAvailability(website, newStatus) {
-    console.log(`${website} is ${newStatus}`);
+    // console.log(`${website} is ${newStatus}`);
     websiteElement = document.getElementById(website);
     websiteElement.dataset.status = newStatus;
     websiteElement.classList.remove('available');
@@ -31,6 +31,28 @@ async function request(username) {
     } catch (error) {
         console.error('Error:', error);
         alert('Failed to check username availability');
+    }
+}
+
+async function requestSingle(website, username) {
+    try {
+        const response = await fetch('http://localhost:3000/requestSingle', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ usernameInput: username, websiteInput: website })
+        });
+
+        const resultString = await response.text();
+        // console.log(resultString);
+        // const result = JSON.parse(resultString);
+        updateAvailability(website, resultString);
+        // sortSelector.dispatchEvent(new Event("change")); // trigger sort
+        // alert(result);
+    } catch (error) {
+        console.error('Error:', error);
+        // alert('Failed to check username availability');
     }
 }
 

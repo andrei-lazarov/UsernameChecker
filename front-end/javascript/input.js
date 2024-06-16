@@ -69,6 +69,8 @@ async function submit() {
 
     const hiddenUntilInput = document.getElementById("hiddenUntilInput");
     hiddenUntilInput.classList.remove("hidden");
+    const legend = document.getElementById("legend-hider");
+    legend.classList.remove("hidden");
 
     const top = document.getElementById("top");
     top.classList.add("small");
@@ -76,7 +78,12 @@ async function submit() {
     updateLinks(username);
     // const sortSelector = document.getElementById('sortSelector');
     // sortSelector.value = 'availability';
-    await request(username);
+    // await request(username);
+
+    const links = document.getElementById("grid-container").querySelectorAll("a");
+    for (const link of links) {
+        requestSingle(link.id, username);
+    }
 
     const scoreText = document.getElementById("score");
     scoreText.textContent = `Username ${username} is available on 30% of the websites`;

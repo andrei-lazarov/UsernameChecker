@@ -16,6 +16,15 @@ app.post('/request', (req, res) => {
     });
 });
 
+app.post('/requestSingle', (req, res) => {
+    const usernameInput = req.body.usernameInput;
+    const websiteInput = req.body.websiteInput;
+    // console.log(`Received username: ${usernameInput} and website: ${websiteInput}`);
+    global.checkSingle(websiteInput, usernameInput).then((result) => {
+        res.send(result);
+    });
+});
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
