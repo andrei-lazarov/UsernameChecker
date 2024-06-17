@@ -97,11 +97,12 @@ async function submit() {
     // await request(username);
 
     scoreText.textContent = `Username ${username} is available on 0% of the websites`;
+    totalWebsites = 0;
+    availableWebsites = 0;
     usernameScore = username;
     const links = document.getElementById("grid-container").querySelectorAll("a");
     for (const link of links) {
         requestSingle(link.id, username);
-        totalWebsites++;
     }
 }
 

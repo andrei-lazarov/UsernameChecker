@@ -52,6 +52,7 @@ async function requestSingle(website, username) {
         // console.log(resultString);
         // const result = JSON.parse(resultString);
         updateAvailability(website, resultString);
+        totalWebsites++;
         if (resultString == '1available')
             availableWebsites++;
         // sortSelector.dispatchEvent(new Event("change")); // trigger sort
