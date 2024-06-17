@@ -6,3 +6,7 @@ inputFieldd.addEventListener("keydown", function (event) {
         checkButtonn.click();
     }
 });
+
+function removeSpaces(value) {
+    document.getElementById("inputField").value = value.replace(/\s/g, "");
+}

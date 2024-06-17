@@ -15,13 +15,14 @@
         <h1><a id="title" href="/front-end/">Username Checker</a></h1>
 
         <div class="usernameInput">
-            <input type="text" id="inputField" required autocomplete="off" autofocus />
+            <input type="text" id="inputField" required autocomplete="off" autofocus
+                oninput="removeSpaces(this.value)" />
             <button id="checkButton" onclick="submit()">Check</button>
         </div>
     </div>
     <div class="bottom">
         <div id="hiddenUntilInput" class="hidden">
-            <h2 id="score"> Username is available on 30% of the websites</h2>
+            <h2 id="score"> Username is available on 0% of the websites</h2>
             <div id="options">
 
                 <div id="filterBox" class="optionBox">
