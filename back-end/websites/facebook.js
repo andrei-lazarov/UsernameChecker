@@ -67,5 +67,5 @@ export const check = async (username) => {
     //     return 'manual';
     // }
 
-    return await isAvailable(username) ? '1available' : '4taken';
+    return await isAvailable(username) ? '2manual' : '4taken';
 }

@@ -45,6 +45,7 @@ import * as playstation from "./websites/playstation.js"
 import * as dribbble from "./websites/dribbble.js"
 import * as playstore from "./websites/playstore.js"
 import * as linkedin from "./websites/linkedin.js"
+import * as twitch from "./websites/twitch.js"
 
 // export const check = async (username) => {
 //     let result = {
@@ -130,6 +131,7 @@ const functionMap = {
     dribbble: dribbble.check,
     playstore: playstore.check,
     linkedin: linkedin.check,
+    twitch: twitch.check,
 }
 
 export const checkSingle = async (website, username) => {
@@ -140,5 +142,5 @@ export const checkSingle = async (website, username) => {
     return result;
 }
 
-const test1 = 'Mojang';
-console.log(await linkedin.check(test1));
+// const test1 = 'andreiasdasdsa';
+// console.log(await twitch.check(test1));
