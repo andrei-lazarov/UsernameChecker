@@ -19,20 +19,25 @@ const isAvailable = async (username) => {
     });
 
     // Check for Couldn't find this account text
-    const foundElement = await page.evaluate(() => {
-        const message = "Couldn't find this account";
-        const elements = document.querySelectorAll('p');
-        for (const element of elements) {
-            if (element.textContent.trim() === message) {
-                return true;
-            }
-        }
-        return false;
-    });
+    // const foundElement = await page.evaluate(() => {
+    //     const message = "Couldn't find this account";
+    //     const elements = document.querySelectorAll('p');
+    //     for (const element of elements) {
+    //         if (element.textContent.trim() === message) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // });
+
+    let usernameAvailable = false;
+    const title = await page.title();
+    if (title === 'Couldn’t find this account. Visit TikTok to discover more trending creators, hashtags, and sounds.')
+        usernameAvailable = true;
 
     await browser.close();
     console.log(`tiktok finish check ${username}`);
-    return foundElement;
+    return usernameAvailable;
 };
 
 export const check = async (username) => {

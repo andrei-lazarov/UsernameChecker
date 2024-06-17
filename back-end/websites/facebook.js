@@ -17,23 +17,14 @@ const isAvailable = async (username) => {
         waitUntil: "domcontentloaded",
     });
 
-    // Decline cookies
-    const declineButton = 'div[aria-label="Decline optional cookies"]'
-    await page.waitForSelector(declineButton);
-    await page.click(declineButton);
-
-    // Close the login popup
-    await page.keyboard.press('Escape');
-
-    // Check for "This content isn't available" element
-    const foundElement = await page.evaluate(() => {
-        const element = document.querySelector('span.x193iq5w.xeuugli.x13faqbe.x1vvkbs.x10flsy6.x1lliihq.x1s928wv.xhkezso.x1gmr53x.x1cpjm7i.x1fgarty.x1943h6x.x4zkp8e.x41vudc.x1603h9y.x1u7k74.x1xlr1w8.xi81zsa.x2b8uid');
-        return (element !== null);
-    });
+    let usernameAvailable = false;
+    const title = await page.title();
+    if (title === 'Facebook')
+        usernameAvailable = true;
 
     await browser.close();
     console.log(`facebook finish check ${username}`);
-    return foundElement;
+    return usernameAvailable;
 }
 
 const sanityCheck = async () => {

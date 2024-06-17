@@ -19,25 +19,30 @@ const isAvailable = async (username) => {
     });
 
     // Decline cookies
-    const declineButton = 'button._a9--._ap36._a9_1';
-    await page.waitForSelector(declineButton);
-    await page.click(declineButton);
+    // const declineButton = 'button._a9--._ap36._a9_1';
+    // await page.waitForSelector(declineButton);
+    // await page.click(declineButton);
 
     // Check for "Sorry, this page isn't available." element
-    const errorMessage = "Sorry, this page isn't available.";
-    const foundElement = await page.evaluate((errorMessage) => {
-        const elements = document.querySelectorAll('span');
-        for (const element of elements) {
-            if (element.textContent.trim() === errorMessage) {
-                return true;
-            }
-        }
-        return false;
-    }, errorMessage);
+    // const errorMessage = "Sorry, this page isn't available.";
+    // const foundElement = await page.evaluate((errorMessage) => {
+    //     const elements = document.querySelectorAll('span');
+    //     for (const element of elements) {
+    //         if (element.textContent.trim() === errorMessage) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }, errorMessage);
+
+    let usernameAvailable = false;
+    const title = await page.title();
+    if (title === 'Page not found • Instagram')
+        usernameAvailable = true;
 
     await browser.close();
     console.log(`instagram finish check ${username}`);
-    return foundElement;
+    return usernameAvailable;
 };
 
 export const check = async (username) => {

@@ -58,6 +58,8 @@ function updateLinks(username) {
             currentHref = `https://play.google.com/store/apps/developer?id=${username}`;
         else if (link.id == 'imgur')
             currentHref = `https://imgur.com/user/${username}`;
+        else if (link.id == 'youtube')
+            currentHref = `https://youtube.com/@${username}`;
         else {
             currentHref = link.getAttribute("href");
 

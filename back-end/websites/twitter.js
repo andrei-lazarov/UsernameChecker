@@ -17,20 +17,25 @@ const isAvailable = async (username) => {
         waitUntil: "networkidle2",
     });
 
-    const errorMessage = "This account doesn’t exist";
-    const foundElement = await page.evaluate((errorMessage) => {
-        const elements = document.querySelectorAll('span');
-        for (const element of elements) {
-            if (element.textContent.trim() === errorMessage) {
-                return true;
-            }
-        }
-        return false;
-    }, errorMessage);
+    // const errorMessage = "This account doesn’t exist";
+    // const foundElement = await page.evaluate((errorMessage) => {
+    //     const elements = document.querySelectorAll('span');
+    //     for (const element of elements) {
+    //         if (element.textContent.trim() === errorMessage) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }, errorMessage);
+
+    let usernameAvailable = false;
+    const title = await page.title();
+    if (title === 'Profile / X')
+        usernameAvailable = true;
 
     await browser.close();
     console.log(`twitter finish check ${username}`);
-    return foundElement;
+    return usernameAvailable;
 };
 
 export const check = async (username) => {

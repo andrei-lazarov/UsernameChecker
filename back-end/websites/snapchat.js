@@ -15,23 +15,28 @@ const isAvailable = async (username) => {
 
     const page = await browser.newPage();
     await page.goto(`https://www.snapchat.com/add/${username}/`, {
-        waitUntil: "networkidle2",
+        waitUntil: "domcontentloaded",
     });
 
-    const errorMessage = "This content was not found.";
-    const foundElement = await page.evaluate((errorMessage) => {
-        const elements = document.querySelectorAll('span');
-        for (const element of elements) {
-            if (element.textContent.trim() === errorMessage) {
-                return true;
-            }
-        }
-        return false;
-    }, errorMessage);
+    // const errorMessage = "This content was not found.";
+    // const foundElement = await page.evaluate((errorMessage) => {
+    //     const elements = document.querySelectorAll('span');
+    //     for (const element of elements) {
+    //         if (element.textContent.trim() === errorMessage) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }, errorMessage);
+
+    let usernameAvailable = false;
+    const title = await page.title();
+    if (title === 'Snapchat')
+        usernameAvailable = true;
 
     await browser.close();
     console.log(`snapchat finish check ${username}`);
-    return foundElement;
+    return usernameAvailable;
 };
 
 export const check = async (username) => {

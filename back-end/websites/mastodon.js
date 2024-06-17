@@ -15,17 +15,22 @@ const isAvailable = async (username) => {
 
     const page = await browser.newPage();
     await page.goto(`https://www.mastodon.social/@${username}/`, {
-        waitUntil: "networkidle2",
+        waitUntil: "domcontentloaded",
     });
 
-    const foundElement = await page.evaluate(() => {
-        const element = document.querySelector('.dialog__message h1');
-        return (element !== null);
-    });
+    // const foundElement = await page.evaluate(() => {
+    //     const element = document.querySelector('.dialog__message h1');
+    //     return (element !== null);
+    // });
+
+    let usernameAvailable = false;
+    const title = await page.title();
+    if (title === "The page you are looking for isn't here. - Mastodon")
+        usernameAvailable = true;
 
     await browser.close();
     console.log(`mastodon finish check ${username}`);
-    return foundElement;
+    return usernameAvailable;
 };
 
 export const check = async (username) => {

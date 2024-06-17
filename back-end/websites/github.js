@@ -18,14 +18,19 @@ const isAvailable = async (username) => {
     });
 
     // Check for 404 image
-    const foundElement = await page.evaluate(() => {
-        const element = document.querySelector('img[alt="404 “This is not the web page you are looking for”"]');
-        return (element !== null);
-    });
+    // const foundElement = await page.evaluate(() => {
+    //     const element = document.querySelector('img[alt="404 “This is not the web page you are looking for”"]');
+    //     return (element !== null);
+    // });
+
+    let usernameAvailable = false;
+    const title = await page.title();
+    if (title === 'Page not found · GitHub · GitHub')
+        usernameAvailable = true;
 
     await browser.close();
     console.log(`github finish check ${username}`);
-    return foundElement;
+    return usernameAvailable;
 };
 
 export const check = async (username) => {
