@@ -8,6 +8,10 @@ function updateAvailability(website, newStatus) {
     websiteElement.classList.remove('taken');
     websiteElement.classList.remove('loading');
     websiteElement.classList.add(newStatus.slice(1));
+    let percentage = 0;
+    if (totalWebsites != 0 && availableWebsites != 0)
+        percentage = Math.round(availableWebsites / totalWebsites * 100);
+    scoreText.textContent = `Username ${usernameScore} is available on ${percentage}% of the websites`;
 }
 
 async function request(username) {
@@ -48,6 +52,8 @@ async function requestSingle(website, username) {
         // console.log(resultString);
         // const result = JSON.parse(resultString);
         updateAvailability(website, resultString);
+        if (resultString == '1available')
+            availableWebsites++;
         // sortSelector.dispatchEvent(new Event("change")); // trigger sort
         // alert(result);
     } catch (error) {

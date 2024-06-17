@@ -1,3 +1,9 @@
+let availableWebsites = 0;
+let totalWebsites = 0;
+let usernameScore;
+
+const scoreText = document.getElementById("score");
+
 function updateLinks(username) {
     const links = document.getElementById("grid-container").querySelectorAll("a");
 
@@ -48,6 +54,10 @@ function updateLinks(username) {
             currentHref = `https://news.ycombinator.com/user?id=${username}`;
         else if (link.id == 'npm')
             currentHref = `https://npmjs.com/~${username}`;
+        else if (link.id == 'playstore')
+            currentHref = `https://play.google.com/store/apps/developer?id=${username}`;
+        else if (link.id == 'imgur')
+            currentHref = `https://imgur.com/user/${username}`;
         else {
             currentHref = link.getAttribute("href");
 
@@ -84,13 +94,13 @@ async function submit() {
     // sortSelector.value = 'availability';
     // await request(username);
 
+    scoreText.textContent = `Username ${username} is available on 0% of the websites`;
+    usernameScore = username;
     const links = document.getElementById("grid-container").querySelectorAll("a");
     for (const link of links) {
         requestSingle(link.id, username);
+        totalWebsites++;
     }
-
-    const scoreText = document.getElementById("score");
-    scoreText.textContent = `Username ${username} is available on 30% of the websites`;
 }
 
 

@@ -39,6 +39,12 @@ import * as leetcode from "./websites/leetcode.js"
 import * as codepen from "./websites/codepen.js"
 import * as hackerrank from "./websites/hackerrank.js"
 import * as pinterest from "./websites/pinterest.js"
+import * as imgur from "./websites/imgur.js"
+import * as vk from "./websites/vk.js"
+import * as playstation from "./websites/playstation.js"
+import * as dribbble from "./websites/dribbble.js"
+import * as playstore from "./websites/playstore.js"
+import * as linkedin from "./websites/linkedin.js"
 
 // export const check = async (username) => {
 //     let result = {
@@ -118,6 +124,12 @@ const functionMap = {
     codepen: codepen.check,
     hackerrank: hackerrank.check,
     pinterest: pinterest.check,
+    imgur: imgur.check,
+    vk: vk.check,
+    playstation: playstation.check,
+    dribbble: dribbble.check,
+    playstore: playstore.check,
+    linkedin: linkedin.check,
 }
 
 export const checkSingle = async (website, username) => {
@@ -128,5 +140,5 @@ export const checkSingle = async (website, username) => {
     return result;
 }
 
-// const test1 = 'andreilzararsav';
-// console.log(await pinterest.check(test1));
+const test1 = 'Mojang';
+console.log(await linkedin.check(test1));
