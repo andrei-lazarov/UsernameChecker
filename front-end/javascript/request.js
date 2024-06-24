@@ -14,33 +14,37 @@ function updateAvailability(website, newStatus) {
     scoreText.textContent = `Username ${usernameScore} is available on ${percentage}% of the websites`;
 }
 
-async function request(username) {
-    try {
-        const response = await fetch('http://localhost:3000/request', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ usernameInput: username })
-        });
+// async function request(username) {
+//     try {
+//         const serverIP = '34.45.227.251';
+//         // const serverIP = 'localhost';
+//         const response = await fetch(`http://${serverIP}:3000/request`, {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({ usernameInput: username })
+//         });
 
-        const resultString = await response.text();
-        // console.log(resultString);
-        const result = JSON.parse(resultString);
-        for (const website in result) {
-            updateAvailability(website, result[website]);
-        }
-        // sortSelector.dispatchEvent(new Event("change")); // trigger sort
-        // alert(result);
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Failed to check username availability');
-    }
-}
+//         const resultString = await response.text();
+//         // console.log(resultString);
+//         const result = JSON.parse(resultString);
+//         for (const website in result) {
+//             updateAvailability(website, result[website]);
+//         }
+//         // sortSelector.dispatchEvent(new Event("change")); // trigger sort
+//         // alert(result);
+//     } catch (error) {
+//         console.error('Error:', error);
+//         alert('Failed to check username availability');
+//     }
+// }
 
 async function requestSingle(website, username) {
     try {
-        const response = await fetch('http://localhost:3000/requestSingle', {
+        const serverIP = '34.45.227.251';
+        // const serverIP = 'localhost';
+        const response = await fetch(`http://${serverIP}:3000/requestSingle`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
