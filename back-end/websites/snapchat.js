@@ -1,8 +1,7 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
-    //to do
-    const pattern = /^[a-zA-Z0-9_]{0,15}$/;
+    const pattern = /^(?![\-._])[a-zA-Z0-9\-_.]{3,15}(?<![\-._])$/;
     return pattern.test(username);
 }
 
@@ -17,17 +16,6 @@ const isAvailable = async (username) => {
     await page.goto(`https://www.snapchat.com/add/${username}/`, {
         waitUntil: "domcontentloaded",
     });
-
-    // const errorMessage = "This content was not found.";
-    // const foundElement = await page.evaluate((errorMessage) => {
-    //     const elements = document.querySelectorAll('span');
-    //     for (const element of elements) {
-    //         if (element.textContent.trim() === errorMessage) {
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }, errorMessage);
 
     let usernameAvailable = false;
     const title = await page.title();
@@ -44,15 +32,5 @@ export const check = async (username) => {
         return '3invalid';
     }
 
-    // if (await sanityCheck() === 'failed') {
-    //     return 'manual';
-    // }
-
     return await isAvailable(username) ? '1available' : '4taken';
 }
-
-// Try with available and taken usernames
-// checkTwitterUsername("fajfhldka");
-// checkTwitterUsername("elonmusk");
-// checkTwitterUsername("andrei_lazarov");
-

@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
-    const pattern = /^(?!\.)[a-zA-Z0-9.]{0,30}(?<!\.com)$/;
+    const pattern = /^(?!\.)[a-zA-Z0-9._]{0,30}(?<!\.com)$/;
     return pattern.test(username);
 }
 
@@ -15,7 +15,7 @@ const isAvailable = async (username) => {
     const page = await browser.newPage();
 
     await page.goto(`https://www.instagram.com/${username}/`, {
-        waitUntil: "domcontentloaded",
+        waitUntil: "networkidle2",
     });
 
     // Decline cookies
@@ -37,6 +37,7 @@ const isAvailable = async (username) => {
 
     let usernameAvailable = false;
     const title = await page.title();
+    console.log(title);
     if (title === 'Page not found • Instagram')
         usernameAvailable = true;
 
