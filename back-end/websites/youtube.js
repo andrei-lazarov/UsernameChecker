@@ -14,7 +14,7 @@ const isAvailable = async (username) => {
 
     const page = await browser.newPage();
     await page.goto(`https://www.youtube.com/@${username}/`, {
-        waitUntil: "domcontentloaded",
+        waitUntil: "networkidle2",
     });
 
     // Decline cookies

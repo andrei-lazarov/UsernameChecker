@@ -1,5 +1,11 @@
 import puppeteer from "puppeteer";
 
+function delay(time) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, time)
+    });
+}
+
 const isValid = (username) => {
     const pattern = /^[a-zA-Z0-9_]{0,15}$/;
     return pattern.test(username);
@@ -17,19 +23,10 @@ const isAvailable = async (username) => {
         waitUntil: "networkidle2",
     });
 
-    // const errorMessage = "This account doesn’t exist";
-    // const foundElement = await page.evaluate((errorMessage) => {
-    //     const elements = document.querySelectorAll('span');
-    //     for (const element of elements) {
-    //         if (element.textContent.trim() === errorMessage) {
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }, errorMessage);
-
     let usernameAvailable = false;
+    await delay(2000);
     const title = await page.title();
+    console.log(title);
     if (title === 'Profile / X')
         usernameAvailable = true;
 
