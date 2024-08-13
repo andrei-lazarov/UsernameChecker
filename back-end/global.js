@@ -47,6 +47,11 @@ import * as playstore from "./websites/playstore.js"
 import * as linkedin from "./websites/linkedin.js"
 import * as twitch from "./websites/twitch.js"
 
+import * as gmail from "./email/gmail.js"
+import * as yahoo from "./email/yahoo.js"
+import * as aol from "./email/aol.js"
+
+
 // export const check = async (username) => {
 //     let result = {
 //         // username: username,
@@ -142,5 +147,7 @@ export const checkSingle = async (website, username) => {
     return result;
 }
 
-// const test1 = 'andreiasdasdsa';
-// console.log(await twitch.check(test1));
+const test1 = 'Aandreiilaazzarov';
+console.log(await aol.check(test1));
+const test2 = 'andrei';
+console.log(await aol.check(test2));
