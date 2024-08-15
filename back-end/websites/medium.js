@@ -20,7 +20,7 @@ const isAvailable = async (username) => {
 
     let usernameAvailable = false;
     const title = await page.title();
-    if (title == 'Not Found – Medium')
+    if (title == 'Medium')
         usernameAvailable = true;
 
     await browser.close();

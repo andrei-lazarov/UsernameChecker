@@ -20,7 +20,7 @@ const isAvailable = async (username) => {
 
     let usernameAvailable = false;
     const title = await page.title();
-    if (title == 'This page could not be found — Patreon')
+    if (title == 'Not found | Patreon')
         usernameAvailable = true;
 
     await browser.close();
