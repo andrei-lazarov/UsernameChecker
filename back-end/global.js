@@ -50,6 +50,8 @@ import * as twitch from "./websites/twitch.js"
 import * as gmail from "./email/gmail.js"
 import * as yahoo from "./email/yahoo.js"
 import * as aol from "./email/aol.js"
+import * as outlook from "./email/outlook.js"
+import * as proton from "./email/proton.js"
 
 
 // export const check = async (username) => {
@@ -137,6 +139,11 @@ const functionMap = {
     playstore: playstore.check,
     linkedin: linkedin.check,
     twitch: twitch.check,
+    gmail: gmail.check,
+    yahoo: yahoo.check,
+    outlook: outlook.check,
+    proton: proton.check,
+    aol: aol.check
 }
 
 export const checkSingle = async (website, username) => {
@@ -147,7 +154,7 @@ export const checkSingle = async (website, username) => {
     return result;
 }
 
-const test1 = 'Aandreiilaazzarov';
-console.log(await aol.check(test1));
-const test2 = 'andrei';
-console.log(await aol.check(test2));
+// const test1 = 'Aandreiilaazzarov';
+// console.log(await outlook.check(test1));
+// const test2 = 'andrei';
+// console.log(await outlook.check(test2));

@@ -79,7 +79,7 @@ const isAvailable = async (username) => {
 
     const targetElement = 'input[name="Passwd"]';
     const foundElement = await page.evaluate((targetElement) => {
-        const elements = document.querySelectorAll(targetElement);
+        const elements = document.querySelector(targetElement);
         if (elements)
             return true;
         return false;
