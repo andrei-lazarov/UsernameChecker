@@ -15,7 +15,7 @@ const isAvailable = async (username) => {
 
     const page = await browser.newPage();
     await page.goto(`https://genius.com/artists/${username}`, {
-        waitUntil: "domcontentloaded",
+        waitUntil: "networkidle2",
     });
 
     let usernameAvailable = false;

@@ -60,6 +60,8 @@ function updateLinks(username) {
             currentHref = `https://imgur.com/user/${username}`;
         else if (link.id == 'youtube')
             currentHref = `https://youtube.com/@${username}`;
+        else if (link.dataset.email == 'y')
+            currentHref = link.getAttribute("href");
         else {
             currentHref = link.getAttribute("href");
 
@@ -96,7 +98,7 @@ async function submit() {
     // sortSelector.value = 'availability';
     // await request(username);
 
-    scoreText.textContent = `Username ${username} is available on 0% of the websites`;
+    scoreText.textContent = `Username ${username} is available on 0% of the websites.`;
     totalWebsites = 0;
     availableWebsites = 0;
     usernameScore = username;
@@ -104,6 +106,124 @@ async function submit() {
     for (const link of links) {
         requestSingle(link.id, username);
     }
+
+    const table = document.getElementById("table");
+    rowString = `<td>${username}</td>
+<td class="cell" id="${username}-gmail" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="y" data-order="0.1">y</td>
+<td class="cell" id="${username}-yahoo" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="y" data-order="0.2">y</td>
+<td class="cell" id="${username}-outlook" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="y" data-order="0.3">y</td>
+<td class="cell" id="${username}-aol" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="y" data-order="0.4">y</td>
+<td class="cell" id="${username}-proton" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="y" data-order="0.5">y</td>
+<td class="cell" id="${username}-facebook" data-social="y" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="1">y</td>
+<td class="cell" id="${username}-instagram" data-social="y" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="y" data-music="n" data-photography="y" data-dev="n" data-email="n" data-order="2">y</td>
+<td class="cell" id="${username}-twitter" data-social="y" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="3">y</td>
+<td class="cell" id="${username}-snapchat" data-social="y" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="4">y</td>
+<td class="cell" id="${username}-mastodon" data-social="y" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="5">y</td>
+<td class="cell" id="${username}-tiktok" data-social="y" data-video="y" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-email="n" data-order="6">y</td>
+<td class="cell" id="${username}-youtube" data-social="n" data-video="y" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-email="n" data-order="7">y</td>
+<td class="cell" id="${username}-twitch" data-social="n" data-video="y" data-blogging="n" data-professional="n"
+    data-gaming="y" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="7.1">y</td>
+<td class="cell" id="${username}-vimeo" data-social="n" data-video="y" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="8">y</td>
+<td class="cell" id="${username}-vk" data-social="n" data-video="y" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="8.1">y</td>
+<td class="cell" id="${username}-linkedin" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="9">y</td>
+<td class="cell" id="${username}-patreon" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="10">y</td>
+<td class="cell" id="${username}-fiverr" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="11">y</td>
+<td class="cell" id="${username}-playstore" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="11.1">y
+</td>
+<td class="cell" id="${username}-github" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="12">y</td>
+<td class="cell" id="${username}-gitlab" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="13">y</td>
+<td class="cell" id="${username}-reddit" data-social="y" data-video="n" data-blogging="y" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="14">y</td>
+<td class="cell" id="${username}-medium" data-social="n" data-video="n" data-blogging="y" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="15">y</td>
+<td class="cell" id="${username}-blogger/blogspot" data-social="n" data-video="n" data-blogging="y"
+    data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n"
+    data-order="16">y</td>
+<td class="cell" id="${username}-wordpress" data-social="n" data-video="n" data-blogging="y" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="17">y</td>
+<td class="cell" id="${username}-hackernews" data-social="n" data-video="n" data-blogging="y" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="18">y</td>
+<td class="cell" id="${username}-producthunt" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="19">y</td>
+<td class="cell" id="${username}-steam" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="y" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="20">y</td>
+<td class="cell" id="${username}-xbox" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="y" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="21">y</td>
+<td class="cell" id="${username}-playstation" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="y" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="21.1">y
+</td>
+<td class="cell" id="${username}-minecraft" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="y" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="22">y</td>
+<td class="cell" id="${username}-roblox" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="y" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="23">y</td>
+<td class="cell" id="${username}-osu" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="y" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="24">y</td>
+<td class="cell" id="${username}-deviantart" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="y" data-music="n" data-photography="y" data-dev="n" data-email="n" data-order="25">y</td>
+<td class="cell" id="${username}-spotify" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-email="n" data-order="26">y</td>
+<td class="cell" id="${username}-soundcloud" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-email="n" data-order="27">y</td>
+<td class="cell" id="${username}-genius_user" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-email="n" data-order="28">y</td>
+<td class="cell" id="${username}-genius_artist" data-social="n" data-video="n" data-blogging="n" data-professional="y"
+    data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-email="n" data-order="29">y</td>
+<td class="cell" id="${username}-imgur" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="y" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="29.1">y
+</td>
+<td class="cell" id="${username}-pinterest" data-social="n" data-video="n" data-blogging="y" data-professional="n"
+    data-gaming="n" data-art="y" data-music="n" data-photography="y" data-dev="n" data-email="n" data-order="29.2">y
+</td>
+<td class="cell" id="${username}-unsplash" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="y" data-music="n" data-photography="y" data-dev="n" data-email="n" data-order="30">y</td>
+<td class="cell" id="${username}-flickr" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="y" data-music="n" data-photography="y" data-dev="n" data-email="n" data-order="31">y</td>
+<td class="cell" id="${username}-vsco" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="y" data-music="n" data-photography="y" data-dev="n" data-email="n" data-order="32">y</td>
+<td class="cell" id="${username}-dribbble" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="y" data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="32.1">y
+</td>
+<td class="cell" id="${username}-npm" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="33">y</td>
+<td class="cell" id="${username}-pypi" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="34">y</td>
+<td class="cell" id="${username}-rubygems" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="35">y</td>
+<td class="cell" id="${username}-kaggle" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="36">y</td>
+<td class="cell" id="${username}-codecademy" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="37">y</td>
+<td class="cell" id="${username}-geeksforgeeks" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="38">y</td>
+<td class="cell" id="${username}-leetcode" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="39">y</td>
+<td class="cell" id="${username}-codepen" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="40">y</td>
+<td class="cell" id="${username}-hackerrank" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+    data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-email="n" data-order="41">y</td>`;
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = rowString;
+    table.appendChild(newRow);
 }
 
 

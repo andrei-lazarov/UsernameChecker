@@ -1,31 +1,45 @@
-const filterBox = document.getElementById('filterBox');
+const categoryButtons = document.getElementById('filterBox').querySelectorAll('.categoryButton');
 const gridItemss = document.querySelectorAll('.grid-item');
+let selectedCategory = 'All';
 
 function hasCategory(item, category) {
     return item.dataset[category] === 'y';
 }
 
-function toggleButton(button) {
-    button.classList.toggle('active');
+function toggleButton(selectedButton) {
+
+    if (selectedButton.classList.contains('active')) {
+        selectedButton.classList.toggle('active');
+        selectedCategory = 'All';
+
+        filterItems();
+        return;
+    }
+
+    for (const button of categoryButtons) {
+        if (button.classList.contains('active')) {
+            button.classList.toggle('active');
+        }
+    }
+    selectedCategory = selectedButton.id.replace('category', '');
+    selectedButton.classList.toggle('active');
+    filterItems();
 }
 
 function filterItems() {
-    const selectedCategories = [];
 
-    for (const button of filterBox.querySelectorAll('.categoryButton')) {
-        if (button.classList.contains('active')) {
-            selectedCategories.push(button.id.replace('category', ''));
-        }
+    if (selectedCategory == 'All') {
+        gridItemss.forEach(item => {
+            item.style.display = 'flex';
+        });
+        return;
     }
 
     gridItemss.forEach(item => {
         let visible = false;
-        for (const category of selectedCategories) {
 
-            if (hasCategory(item, category.toLowerCase())) {
-                visible = true;
-                break;
-            }
+        if (hasCategory(item, selectedCategory.toLowerCase())) {
+            visible = true;
         }
         item.style.display = visible ? 'flex' : 'none';
     });
@@ -34,8 +48,7 @@ function filterItems() {
 filterBox.querySelectorAll('.categoryButton').forEach(button => {
     button.addEventListener('click', () => {
         toggleButton(button);
-        filterItems();
     });
 });
 
-window.addEventListener('DOMContentLoaded', filterItems);
+// window.addEventListener('DOMContentLoaded', filterItems);

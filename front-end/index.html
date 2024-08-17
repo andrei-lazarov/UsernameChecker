@@ -20,22 +20,317 @@
             <button id="checkButton" onclick="submit()">Check</button>
         </div>
     </div>
+    <div id="compareModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <table id="table">
+                <tr>
+                    <th>Username</th>
+                    <th class="small-icon" id="small-gmail" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="y" data-order="0.1"> <img src="logos/gmail.png" alt="gmail"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-yahoo" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="y" data-order="0.2"> <img src="logos/yahoo.png" alt="yahoo"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-outlook" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="y" data-order="0.3"> <img src="logos/outlook.png" alt="outlook"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-aol" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="y" data-order="0.4"> <img src="logos/aol.png" alt="aol"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-proton" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="y" data-order="0.5"> <img src="logos/proton.jpeg" alt="proton"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-facebook" data-social="y" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="1"> <img src="logos/facebook.png" alt="facebook"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-instagram" data-social="y" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="y" data-music="n" data-photography="y"
+                        data-dev="n" data-email="n" data-order="2"> <img src="logos/instagram.webp"
+                            alt="instagram"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-twitter" data-social="y" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="3"> <img src="logos/twitter.png" alt="Twitter"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-snapchat" data-social="y" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="4"> <img src="logos/snapchat.png" alt="snapchat"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-mastodon" data-social="y" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="5"> <img src="logos/mastodon.png" alt="mastodon"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-tiktok" data-social="y" data-video="y" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="y" data-photography="n"
+                        data-dev="n" data-email="n" data-order="6"> <img src="logos/tiktok.png" alt="tiktok"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-youtube" data-social="n" data-video="y" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="y" data-photography="n"
+                        data-dev="n" data-email="n" data-order="7"> <img src="logos/youtube.png" alt="youtube"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-twitch" data-social="n" data-video="y" data-blogging="n"
+                        data-professional="n" data-gaming="y" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="7.1"> <img src="logos/twitch.png" alt="twitch"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-vimeo" data-social="n" data-video="y" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="8"> <img src="logos/vimeo.png" alt="vimeo"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-vk" data-social="n" data-video="y" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="8.1"> <img src="logos/vk.png" alt="vk"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-linkedin" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="y" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="9"> <img src="logos/linkedin.png" alt="linkedin"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-patreon" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="y" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="10"> <img src="logos/patreon.webp" alt="patreon"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-fiverr" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="y" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="11"> <img src="logos/fiverr.png" alt="fiverr"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-playstore" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="y" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="11.1"> <img src="logos/playstore.png"
+                            alt="playstore"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-github" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="y" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="12"> <img src="logos/github.png" alt="github"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-gitlab" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="y" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="13"> <img src="logos/gitlab.png" alt="gitlab"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-reddit" data-social="y" data-video="n" data-blogging="y"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="14"> <img src="logos/reddit.png" alt="reddit"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-medium" data-social="n" data-video="n" data-blogging="y"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="15"> <img src="logos/medium.png" alt="medium"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-blogger/blogspot" data-social="n" data-video="n" data-blogging="y"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="16"> <img src="logos/blogger.png" alt="blogger"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-wordpress" data-social="n" data-video="n" data-blogging="y"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="17"> <img src="logos/wordpress.png"
+                            alt="wordpress"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-hackernews" data-social="n" data-video="n" data-blogging="y"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="18"> <img src="logos/hackernews.png"
+                            alt="hackernews"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-producthunt" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="y" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="19"> <img src="logos/producthunt.png"
+                            alt="producthunt"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-steam" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="y" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="20"> <img src="logos/steam.png" alt="steam"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-xbox" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="y" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="21"> <img src="logos/xbox.png" alt="xbox"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-playstation" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="y" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="21.1"> <img src="logos/playstation.webp"
+                            alt="playstation"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-minecraft" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="y" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="22"> <img src="logos/minecraft.png"
+                            alt="minecraft"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-roblox" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="y" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="23"> <img src="logos/roblox.png" alt="roblox"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-osu" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="y" data-art="n" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="24"> <img src="logos/osu.png" alt="osu"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-deviantart" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="y" data-music="n" data-photography="y"
+                        data-dev="n" data-email="n" data-order="25"> <img src="logos/deviantart.jpg"
+                            alt="deviantart"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-spotify" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="y" data-photography="n"
+                        data-dev="n" data-email="n" data-order="26"> <img src="logos/spotify.png" alt="spotify"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-soundcloud" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="y" data-photography="n"
+                        data-dev="n" data-email="n" data-order="27"> <img src="logos/soundcloud.png"
+                            alt="soundcloud"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-genius_user" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="y" data-photography="n"
+                        data-dev="n" data-email="n" data-order="28"> <img src="logos/genius_user.png"
+                            alt="genius user"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-genius_artist" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="y" data-gaming="n" data-art="n" data-music="y" data-photography="n"
+                        data-dev="n" data-email="n" data-order="29"> <img src="logos/genius_artist.png"
+                            alt="genius artist"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-imgur" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="y" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="29.1"> <img src="logos/imgur.png" alt="imgur"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-pinterest" data-social="n" data-video="n" data-blogging="y"
+                        data-professional="n" data-gaming="n" data-art="y" data-music="n" data-photography="y"
+                        data-dev="n" data-email="n" data-order="29.2"> <img src="logos/pinterest.png"
+                            alt="pinterest"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-unsplash" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="y" data-music="n" data-photography="y"
+                        data-dev="n" data-email="n" data-order="30"> <img src="logos/unsplash.png" alt="unsplash"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-flickr" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="y" data-music="n" data-photography="y"
+                        data-dev="n" data-email="n" data-order="31"> <img src="logos/flickr.png" alt="flickr"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-vsco" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="y" data-music="n" data-photography="y"
+                        data-dev="n" data-email="n" data-order="32"> <img src="logos/vsco.png" alt="vsco"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-dribbble" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="y" data-music="n" data-photography="n"
+                        data-dev="n" data-email="n" data-order="32.1"> <img src="logos/dribbble.jpeg"
+                            alt="dribbble"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-npm" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="33"> <img src="logos/npm.png" alt="npm"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-pypi" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="34"> <img src="logos/pypi.png" alt="pypi"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-rubygems" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="35"> <img src="logos/rubygems.jpeg"
+                            alt="rubygems"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-kaggle" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="36"> <img src="logos/kaggle.png" alt="kaggle"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-codecademy" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="37"> <img src="logos/codecademy.png"
+                            alt="codecademy"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-geeksforgeeks" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="38"> <img src="logos/geeksforgeeks.png"
+                            alt="geeksforgeeks"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-leetcode" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="39"> <img src="logos/leetcode.png" alt="leetcode"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-codepen" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="40"> <img src="logos/codepen.png" alt="codepen"></img>
+                    </th>
+
+                    <th class="small-icon" id="small-hackerrank" data-social="n" data-video="n" data-blogging="n"
+                        data-professional="n" data-gaming="n" data-art="n" data-music="n" data-photography="n"
+                        data-dev="y" data-email="n" data-order="41"> <img src="logos/hackerrank.png"
+                            alt="hackerrank"></img>
+                    </th>
+                </tr>
+
+            </table>
+        </div>
+    </div>
     <div class="bottom">
         <div id="hiddenUntilInput" class="hidden">
-            <h2 id="score"> Username is available on 0% of the websites</h2>
+            <div id="resultBox">
+                <h2 id="score"> Username is available on 0% of the websites.</h2>
+                <button id="compareButton" onclick="openModal()">Compare</button>
+            </div>
             <div id="options">
 
                 <div id="filterBox" class="optionBox">
                     Filter
-                    <button id="categoryEmail" class="categoryButton active">Email</button>
-                    <button id="categorySocial" class="categoryButton active">Social</button>
-                    <button id="categoryVideo" class="categoryButton active">Video</button>
-                    <button id="categoryDev" class="categoryButton active">Dev</button>
-                    <button id="categoryGaming" class="categoryButton active">Gaming</button>
-                    <button id="categoryBlogging" class="categoryButton active">Blogging</button>
-                    <button id="categoryProfessional" class="categoryButton active">Professional</button>
-                    <button id="categoryMusic" class="categoryButton active">Music</button>
-                    <button id="categoryArt" class="categoryButton active">Art</button>
+                    <button id="categoryEmail" class="categoryButton">Email</button>
+                    <button id="categorySocial" class="categoryButton">Social</button>
+                    <button id="categoryVideo" class="categoryButton">Video</button>
+                    <button id="categoryDev" class="categoryButton">Dev</button>
+                    <button id="categoryGaming" class="categoryButton">Gaming</button>
+                    <button id="categoryBlogging" class="categoryButton">Blogging</button>
+                    <button id="categoryProfessional" class="categoryButton">Professional</button>
+                    <button id="categoryMusic" class="categoryButton">Music</button>
+                    <button id="categoryArt" class="categoryButton">Art</button>
                 </div>
                 <div id="sortSearchBox">
                     <div id="sortBox" class="optionBox">
@@ -56,49 +351,49 @@
         </div>
         <div id="grid-container">
 
-            <a target="_blank" href="https://accounts.google.com/SignUp" class="grid-item" id="gmail"
-                data-status="1available" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+            <a target="_blank" href="https://accounts.google.com/SignUp/" class="grid-item" id="gmail"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
                 data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="y"
                 data-order="0.1"> <img src="logos/gmail.png" alt="gmail"></img>
             </a>
 
-            <a target="_blank" href="https://login.yahoo.com/account/create" class="grid-item" id="yahoo"
-                data-status="1available" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+            <a target="_blank" href="https://login.yahoo.com/account/create/" class="grid-item" id="yahoo"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
                 data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="y"
                 data-order="0.2"> <img src="logos/yahoo.png" alt="yahoo"></img>
             </a>
 
-            <a target="_blank" href="https://signup.live.com/" class="grid-item" id="outlook" data-status="1available"
+            <a target="_blank" href="https://signup.live.com/" class="grid-item" id="outlook" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
                 data-music="n" data-photography="n" data-dev="n" data-email="y" data-order="0.3"> <img
                     src="logos/outlook.png" alt="outlook"></img>
             </a>
 
-            <a target="_blank" href="https://login.aol.com/account/create" class="grid-item" id="aol"
-                data-status="1available" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+            <a target="_blank" href="https://login.aol.com/account/create/" class="grid-item" id="aol"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
                 data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="y"
                 data-order="0.4"> <img src="logos/aol.png" alt="aol"></img>
             </a>
 
-            <a target="_blank" href="https://account.proton.me/mail/signup" class="grid-item" id="proton"
-                data-status="1available" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+            <a target="_blank" href="https://account.proton.me/mail/signup/" class="grid-item" id="proton"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
                 data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="y"
-                data-order="0.5"> <img src="logos/proton.png" alt="proton"></img>
+                data-order="0.5"> <img src="logos/proton.jpeg" alt="proton"></img>
             </a>
 
-            <a target="_blank" href="https://facebook.com/" class="grid-item" id="facebook" data-status="1available"
+            <a target="_blank" href="https://facebook.com/" class="grid-item" id="facebook" data-status="6unknown"
                 data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
                 data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="1"> <img
                     src="logos/facebook.png" alt="facebook"></img>
             </a>
 
-            <a target="_blank" href="https://instagram.com/" class="grid-item" id="instagram" data-status="2manual"
+            <a target="_blank" href="https://instagram.com/" class="grid-item" id="instagram" data-status="6unknown"
                 data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
                 data-music="n" data-photography="y" data-dev="n" data-email="n" data-order="2"> <img
                     src="logos/instagram.webp" alt="instagram"></img>
             </a>
 
-            <a target="_blank" href="https://twitter.com/" class="grid-item" id="twitter" data-status="3invalid"
+            <a target="_blank" href="https://twitter.com/" class="grid-item" id="twitter" data-status="6unknown"
                 data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
                 data-music="n" data-photography="n" data-dev="n" data-email="n" data-order="3"> <img
                     src="logos/twitter.png" alt="Twitter"></img>
@@ -275,7 +570,7 @@
             <a target="_blank" href="https://genius.com/" class="grid-item" id="genius_user" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
                 data-music="y" data-photography="n" data-dev="n" data-email="n" data-order="28"> <img
-                    src="logos/genius_user.png" alt="genius user" img>
+                    src="logos/genius_user.png" alt="genius user"></img>
             </a>
 
             <a target="_blank" href="https://genius.com/artists/" class="grid-item" id="genius_artist"
@@ -395,6 +690,7 @@
     <script src="javascript/input.js"></script>
     <script src="javascript/request.js"></script>
     <script src="javascript/enter.js"></script>
+    <script src="javascript/compare.js"></script>
 </body>
 
 </html>

@@ -11,7 +11,29 @@ function updateAvailability(website, newStatus) {
     let percentage = 0;
     if (totalWebsites != 0 && availableWebsites != 0)
         percentage = Math.round(availableWebsites / totalWebsites * 100);
-    scoreText.textContent = `Username ${usernameScore} is available on ${percentage}% of the websites`;
+    scoreText.textContent = `Username ${usernameScore} is available on ${percentage}% of the websites.`;
+}
+
+async function requestSingle(website, username) {
+    try {
+        // const serverIP = '34.45.227.251';
+        const serverIP = 'localhost';
+        const response = await fetch(`http://${serverIP}:3000/requestSingle`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ usernameInput: username, websiteInput: website })
+        });
+
+        const resultString = await response.text();
+        updateAvailability(website, resultString);
+        totalWebsites++;
+        if (resultString == '1available')
+            availableWebsites++;
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
 
 // async function request(username) {
@@ -39,31 +61,3 @@ function updateAvailability(website, newStatus) {
 //         alert('Failed to check username availability');
 //     }
 // }
-
-async function requestSingle(website, username) {
-    try {
-        const serverIP = '34.45.227.251';
-        // const serverIP = 'localhost';
-        const response = await fetch(`http://${serverIP}:3000/requestSingle`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ usernameInput: username, websiteInput: website })
-        });
-
-        const resultString = await response.text();
-        // console.log(resultString);
-        // const result = JSON.parse(resultString);
-        updateAvailability(website, resultString);
-        totalWebsites++;
-        if (resultString == '1available')
-            availableWebsites++;
-        // sortSelector.dispatchEvent(new Event("change")); // trigger sort
-        // alert(result);
-    } catch (error) {
-        console.error('Error:', error);
-        // alert('Failed to check username availability');
-    }
-}
-
