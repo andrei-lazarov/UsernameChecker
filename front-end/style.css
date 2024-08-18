@@ -270,3 +270,12 @@ img {
     text-decoration: none;
     cursor: pointer;
 }
+
+.small-logo {
+    width: 20px;
+    /* display: none; */
+}
+
+/* .cell {
+    display: none;
+} */

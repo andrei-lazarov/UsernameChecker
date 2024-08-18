@@ -109,6 +109,15 @@ async function submit() {
 
     const table = document.getElementById("table");
     rowString = `<td>${username}</td>
+<td class="cell" id="${username}-email" data-all="y">0</td>
+<td class="cell" id="${username}-social" data-all="y">0</td>
+<td class="cell" id="${username}-video" data-all="y">0</td>
+<td class="cell" id="${username}-dev" data-all="y">0</td>
+<td class="cell" id="${username}-gaming" data-all="y">0</td>
+<td class="cell" id="${username}-blogging" data-all="y">0</td>
+<td class="cell" id="${username}-proffesional" data-all="y">0</td>
+<td class="cell" id="${username}-music" data-all="y">0</td>
+<td class="cell" id="${username}-art" data-all="y">0</td>
 <td class="cell" id="${username}-gmail" data-social="n" data-video="n" data-blogging="n" data-professional="n"
     data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-email="y" data-order="0.1">y</td>
 <td class="cell" id="${username}-yahoo" data-social="n" data-video="n" data-blogging="n" data-professional="n"
@@ -224,6 +233,9 @@ async function submit() {
     const newRow = document.createElement("tr");
     newRow.innerHTML = rowString;
     table.appendChild(newRow);
+    cells = table.querySelectorAll('.cell');
+    modalFilterItems();
+
 }
 
 

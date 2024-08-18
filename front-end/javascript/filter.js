@@ -45,7 +45,7 @@ function filterItems() {
     });
 }
 
-filterBox.querySelectorAll('.categoryButton').forEach(button => {
+categoryButtons.forEach(button => {
     button.addEventListener('click', () => {
         toggleButton(button);
     });
