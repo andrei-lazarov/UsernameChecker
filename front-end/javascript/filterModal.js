@@ -1,7 +1,7 @@
 const modalCategoryButtons = document.getElementById('modalFilterBox').querySelectorAll('.modalCategoryButton');
 let selectedModalCategory = 'All';
 const table = document.getElementById('table');
-const smallIcons = table.querySelectorAll('.small-icon');
+const cellHeaders = table.querySelectorAll('.cell-header');
 let cells;
 
 function toggleModalButton(selectedButton) {
@@ -26,7 +26,7 @@ function toggleModalButton(selectedButton) {
 
 function modalFilterItems() {
 
-    smallIcons.forEach(item => {
+    cellHeaders.forEach(item => {
         let visible = false;
 
         if (hasCategory(item, selectedModalCategory.toLowerCase())) {
@@ -56,4 +56,4 @@ modalCategoryButtons.forEach(button => {
     });
 });
 
-window.addEventListener('DOMContentLoaded', modalFilterItems);
+// window.addEventListener('DOMContentLoaded', modalFilterItems);
