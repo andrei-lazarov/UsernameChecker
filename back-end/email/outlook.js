@@ -2,7 +2,7 @@ import puppeteer from "puppeteer";
 
 const isValid = (username) => {
     const pattern = /^(?![\._0-9\-])[a-zA-Z0-9.\-_]{1,64}(?<!\.)$/;
-    // Must start with letter. Allowed characters. Length. Must not end with dot.
+    // Outlook: Must start with letter. Allowed characters. Length. Must not end with dot.
     return pattern.test(username);
 }
 

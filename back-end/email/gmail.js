@@ -8,7 +8,7 @@ function delay(time) {
 
 const isValid = (username) => {
     const pattern = /^(?!\.)[a-zA-Z0-9.]{6,30}(?<!\.)$/;
-    // Must not start with dot. Allowed characters. Length. Must not end with dot.
+    // Gmail: Must not start with dot. Allowed characters. Length. Must not end with dot.
     return pattern.test(username);
 }
 

@@ -2,6 +2,7 @@ import puppeteer from "puppeteer";
 
 const isValid = (username) => {
     const pattern = /^(?!\-)[a-zA-Z0-9-]{1,37}(?<!\-)$/;
+    // ok
     return pattern.test(username);
 }
 

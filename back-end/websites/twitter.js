@@ -7,7 +7,7 @@ function delay(time) {
 }
 
 const isValid = (username) => {
-    const pattern = /^[a-zA-Z0-9_]{0,15}$/;
+    const pattern = /^[a-zA-Z0-9_]{0,15}$/; //ok
     return pattern.test(username);
 }
 

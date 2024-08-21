@@ -8,7 +8,7 @@ function delay(time) {
 
 const isValid = (username) => {
     const pattern = /^(?![\._0-9])[a-zA-Z0-9._]{4,32}(?<![\._])$/;
-    // Must start with letter. Allowed characters: letters, numbers, full stops and underscores. Length min 4 max 32. Must end with letter or number.
+    // Aol: Must start with letter. Allowed characters: letters, numbers, full stops and underscores. Length min 4 max 32. Must end with letter or number.
     return pattern.test(username);
 }
 

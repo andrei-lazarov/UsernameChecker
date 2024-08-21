@@ -1,8 +1,8 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
-    const pattern = /^(?![\._0-9\-])[a-zA-Z0-9.\-_]{1,64}(?<!\.)$/;
-    // Must start with letter. Allowed characters. Length. Must not end with dot.
+    const pattern = /^(?![\._\-])[a-zA-Z0-9.\-_]{1,40}(?<![\._\-])$/;
+    // Proton: Must start with letter or digit. Allowed characters. Length. Must end with letter or digit.
     return pattern.test(username);
 }
 
