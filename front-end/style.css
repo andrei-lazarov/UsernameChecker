@@ -89,6 +89,14 @@ body {
     text-decoration: none;
 }
 
+#clear-table {
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
 * {
     font-family: system-ui;
 }
