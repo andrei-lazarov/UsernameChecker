@@ -43,7 +43,8 @@ async function requestSingle(website, username) {
         updateAvailability(website, username, resultString);
         totalWebsites++;
         if (totalWebsites == 53) {
-            compareButton.disabled = false;
+            loadingBox.style.display = 'none';
+            resultBox.style.display = 'flex';
             const usernameEmailElement = document.getElementById(`${username}-email`);
             const usernameSocialElement = document.getElementById(`${username}-social`);
             const usernameVideoElement = document.getElementById(`${username}-video`);
@@ -93,6 +94,7 @@ async function requestSingle(website, username) {
                     }
                 }
             });
+            compareButton.disabled = false;
         }
         else
             compareButton.disabled = true;

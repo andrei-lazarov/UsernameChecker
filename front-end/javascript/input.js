@@ -88,6 +88,10 @@ async function submit() {
         window.history.replaceState({}, document.title, `${window.location.origin}${window.location.pathname}?${params.toString()}`);
     }
 
+    const loadingBox = document.getElementById('loadingBox');
+    loadingBox.style.display = 'flex';
+    const resultBox = document.getElementById("resultBox");
+    resultBox.style.display = 'none';
     const hiddenUntilInput = document.getElementById("hiddenUntilInput");
     hiddenUntilInput.classList.remove("hidden");
     const legend = document.getElementById("legend-hider");
