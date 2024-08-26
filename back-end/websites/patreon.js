@@ -14,13 +14,15 @@ const isAvailable = async (username) => {
     });
 
     const page = await browser.newPage();
+    const customUserAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+    await page.setUserAgent(customUserAgent);
     await page.goto(`https://www.patreon.com/${username}/`, {
         waitUntil: "domcontentloaded",
     });
 
     let usernameAvailable = false;
     const title = await page.title();
-    if (title == 'Not found | Patreon')
+    if (title == 'Not found | Patreon' || title == 'This page could not be found — Patreon')
         usernameAvailable = true;
 
     await browser.close();

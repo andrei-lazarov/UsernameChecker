@@ -61,6 +61,8 @@ function updateLinks(username) {
             currentHref = `https://imgur.com/user/${username}`;
         else if (link.id == 'youtube')
             currentHref = `https://youtube.com/@${username}`;
+        else if (link.id == 'medium')
+            currentHref = `https://www.medium.com/@${username}/`;
         else if (link.dataset.email == 'y')
             currentHref = link.getAttribute("href");
         else {
