@@ -15,7 +15,7 @@ const isAvailable = async (username) => {
 
     const page = await browser.newPage();
     await page.goto('https://signup.live.com/', {
-        waitUntil: "domcontentloaded",
+        waitUntil: "networkidle2",
     });
 
     // create account

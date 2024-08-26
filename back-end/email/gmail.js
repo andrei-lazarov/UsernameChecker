@@ -21,7 +21,7 @@ const isAvailable = async (username) => {
 
     const page = await browser.newPage();
     await page.goto('https://accounts.google.com/SignUp', {
-        waitUntil: "domcontentloaded",
+        waitUntil: "networkidle2",
     });
 
     // name

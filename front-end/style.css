@@ -40,6 +40,15 @@ body {
     border: 2px solid rgb(155, 155, 155);
 }
 
+.close {
+    color: rgb(105, 105, 105);
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
     body {
@@ -82,6 +91,15 @@ body {
         border-radius: 2px;
         background-color: #26619c;
         border: 2px solid rgb(105, 105, 105);
+    }
+
+    .close {
+        color: #aaaaaa;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #fff;
     }
 }
 
@@ -302,6 +320,10 @@ body {
     margin-bottom: 5px;
 }
 
+.modalCategoryButton {
+    margin-bottom: 5px;
+}
+
 #sortSearchBox {
     display: flex;
     flex-wrap: wrap;
@@ -327,19 +349,23 @@ body {
     margin: 5% auto;
     border-radius: 5px;
     padding: 20px;
+    padding-top: 5px;
     width: 80%;
 }
 
+#close-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .close {
-    color: #aaaaaa;
-    float: right;
+    /* float: right; */
     font-size: 28px;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
     text-decoration: none;
     cursor: pointer;
 }
@@ -372,11 +398,18 @@ th {
 
 #table {
     margin: 5px;
+    /* display: block; */
+    /* overflow-x: auto; */
+    /* white-space: nowrap; */
+}
+
+#table-container {
+    overflow: auto;
 }
 
 .cell {
     text-align: right;
-    padding-right: 20px;
+    padding-right: 13px;
 }
 
 .hidden {

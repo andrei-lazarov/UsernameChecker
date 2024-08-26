@@ -18,10 +18,7 @@ function updateAvailability(website, username, newStatus) {
     websiteElement.classList.remove('loading-border');
     websiteElement.classList.add(newStatusClass);
     websiteElement.classList.add(`${newStatusClass}-border`);
-    let percentage = 0;
-    if (totalWebsites != 0 && availableWebsites != 0)
-        percentage = Math.round(availableWebsites / totalWebsites * 100);
-    scoreText.textContent = `Username ${usernameScore} is available on ${percentage}% of the websites.`;
+
 
     smallWebsiteElement = document.getElementById(`${username}-${website}`);
     smallWebsiteElement.classList.add(newStatusClass);
@@ -43,6 +40,13 @@ async function requestSingle(website, username) {
         updateAvailability(website, username, resultString);
         totalWebsites++;
         if (totalWebsites == 53) {
+
+            let percentage = 0;
+            if (availableWebsites != 0)
+                percentage = Math.round(availableWebsites / totalWebsites * 100);
+            scoreText.textContent = `Username ${usernameScore} is available on ${percentage}% of the websites.`;
+            const scoreCell = document.getElementById(`${username}-score`);
+            scoreCell.textContent = `${percentage}%`;
             loadingBox.style.display = 'none';
             resultBox.style.display = 'flex';
             const usernameEmailElement = document.getElementById(`${username}-email`);

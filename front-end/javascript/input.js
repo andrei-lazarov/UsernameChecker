@@ -113,6 +113,7 @@ async function submit() {
 
     const table = document.getElementById("table");
     rowString = `<td class="cell-username">${username}</td>
+<td class="cell" id="${username}-score" data-all="y">0%</td>
 <td class="cell" id="${username}-email" data-all="y">0</td>
 <td class="cell" id="${username}-social" data-all="y">0</td>
 <td class="cell" id="${username}-video" data-all="y">0</td>
