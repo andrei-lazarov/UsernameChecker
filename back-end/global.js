@@ -22,7 +22,7 @@ import * as minecraft from "./websites/minecraft.js"
 import * as roblox from "./websites/roblox.js"
 import * as osu from "./websites/osu.js"
 import * as deviantart from "./websites/deviantart.js"
-import * as spotify from "./websites/spotify.js"
+// import * as spotify from "./websites/spotify.js"
 import * as soundcloud from "./websites/soundcloud.js"
 import * as genius_user from "./websites/genius_user.js"
 import * as genius_artist from "./websites/genius_artist.js"
@@ -43,7 +43,7 @@ import * as imgur from "./websites/imgur.js"
 import * as vk from "./websites/vk.js"
 import * as playstation from "./websites/playstation.js"
 import * as dribbble from "./websites/dribbble.js"
-import * as playstore from "./websites/playstore.js"
+// import * as playstore from "./websites/playstore.js"
 import * as linkedin from "./websites/linkedin.js"
 import * as twitch from "./websites/twitch.js"
 
@@ -115,7 +115,7 @@ const functionMap = {
     roblox: roblox.check,
     osu: osu.check,
     deviantart: deviantart.check,
-    spotify: spotify.check,
+    // spotify: spotify.check,
     soundcloud: soundcloud.check,
     genius_user: genius_user.check,
     genius_artist: genius_artist.check,
@@ -136,7 +136,7 @@ const functionMap = {
     vk: vk.check,
     playstation: playstation.check,
     dribbble: dribbble.check,
-    playstore: playstore.check,
+    // playstore: playstore.check,
     linkedin: linkedin.check,
     twitch: twitch.check,
     gmail: gmail.check,

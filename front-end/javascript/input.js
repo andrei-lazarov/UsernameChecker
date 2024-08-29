@@ -39,8 +39,8 @@ function updateLinks(username) {
             currentHref = `https://www.roblox.com/user.aspx?username=${username}`;
         else if (link.id == 'osu')
             currentHref = `https://osu.ppy.sh/users/${username}`;
-        else if (link.id == 'spotify')
-            currentHref = `https://open.spotify.com/user/${username}`;
+        // else if (link.id == 'spotify')
+        //     currentHref = `https://open.spotify.com/user/${username}`;
         else if (link.id == 'pypi')
             currentHref = `https://pypi.org/user/${username}`;
         else if (link.id == 'rubygems')
@@ -55,8 +55,8 @@ function updateLinks(username) {
             currentHref = `https://news.ycombinator.com/user?id=${username}`;
         else if (link.id == 'npm')
             currentHref = `https://npmjs.com/~${username}`;
-        else if (link.id == 'playstore')
-            currentHref = `https://play.google.com/store/apps/developer?id=${username}`;
+        // else if (link.id == 'playstore')
+        //     currentHref = `https://play.google.com/store/apps/developer?id=${username}`;
         else if (link.id == 'imgur')
             currentHref = `https://imgur.com/user/${username}`;
         else if (link.id == 'youtube')
@@ -159,8 +159,6 @@ async function submit() {
     data-gaming="n" data-art="n" data-music="n"   data-dev="n" data-email="n" data-order="10"></td>
 <td class="cell" id="${username}-fiverr" data-social="n" data-video="n" data-blogging="n" data-professional="y"
     data-gaming="n" data-art="n" data-music="n"   data-dev="n" data-email="n" data-order="11"></td>
-<td class="cell" id="${username}-playstore" data-social="n" data-video="n" data-blogging="n" data-professional="y"
-    data-gaming="n" data-art="n" data-music="n"   data-dev="y" data-email="n" data-order="11.1"></td>
 <td class="cell" id="${username}-github" data-social="n" data-video="n" data-blogging="n" data-professional="y"
     data-gaming="n" data-art="n" data-music="n"   data-dev="y" data-email="n" data-order="12"></td>
 <td class="cell" id="${username}-gitlab" data-social="n" data-video="n" data-blogging="n" data-professional="y"
@@ -189,8 +187,6 @@ async function submit() {
     data-gaming="y" data-art="n" data-music="n"   data-dev="n" data-email="n" data-order="24"></td>
 <td class="cell" id="${username}-deviantart" data-social="n" data-video="n" data-blogging="n" data-professional="n"
     data-gaming="n" data-art="y" data-music="n"   data-dev="n" data-email="n" data-order="25"></td>
-<td class="cell" id="${username}-spotify" data-social="n" data-video="n" data-blogging="n" data-professional="n"
-    data-gaming="n" data-art="n" data-music="y"   data-dev="n" data-email="n" data-order="26"></td>
 <td class="cell" id="${username}-soundcloud" data-social="n" data-video="n" data-blogging="n" data-professional="n"
     data-gaming="n" data-art="n" data-music="y"   data-dev="n" data-email="n" data-order="27"></td>
 <td class="cell" id="${username}-genius_user" data-social="n" data-video="n" data-blogging="n" data-professional="n"

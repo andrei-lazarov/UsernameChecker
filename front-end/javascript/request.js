@@ -39,7 +39,7 @@ async function requestSingle(website, username) {
         const resultString = await response.text();
         updateAvailability(website, username, resultString);
         totalWebsites++;
-        if (totalWebsites == 53) {
+        if (totalWebsites == 51) {
 
             let percentage = 0;
             if (availableWebsites != 0)
