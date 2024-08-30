@@ -1,8 +1,8 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
-    // to do
-    const pattern = /^(?!\.)[a-zA-Z0-9.\-_]{3,30}$/;
+    // ok
+    const pattern = /^[a-zA-Z0-9.\-_]{1,30}$/;
     return pattern.test(username);
 }
 
@@ -14,13 +14,13 @@ const isAvailable = async (username) => {
     });
 
     const page = await browser.newPage();
-    await page.goto(`https://www.medium.com/${username}/`, {
+    await page.goto(`https://www.medium.com/@${username}/`, {
         waitUntil: "domcontentloaded",
     });
 
     let usernameAvailable = false;
     const title = await page.title();
-    if (title == 'Not Found – Medium')
+    if (title == 'Medium' || title == 'Not Found – Medium')
         usernameAvailable = true;
 
     await browser.close();

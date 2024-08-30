@@ -1,8 +1,9 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
-    // to do
-    const pattern = /^(?!\-)[a-zA-Z0-9-]{1,37}(?<!\-)$/;
+    // ok
+    const pattern = /^(?=.*[a-zA-Z])[a-zA-Z0-9]{1,60}$/;
+    // at least one letter
     return pattern.test(username);
 }
 
@@ -20,8 +21,17 @@ const isAvailable = async (username) => {
 
     let usernameAvailable = false;
     const title = await page.title();
-    if (title == 'WordPress.com')
-        usernameAvailable = true;
+    if (title != 'WordPress.com')
+        usernameAvailable = false;
+    else {
+        const foundElement = await page.evaluate(() => {
+            const element = document.querySelector('p.get-it');
+            if (element)
+                return true
+            return false;
+        });
+        usernameAvailable = foundElement;
+    }
 
     await browser.close();
     console.log(`wordpress finish check ${username}`);

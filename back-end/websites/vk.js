@@ -1,9 +1,23 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
-    // to do
-    const pattern = /^(?!\.)[a-zA-Z0-9.\-_]{3,30}$/;
-    return pattern.test(username);
+    // ok hopefully
+    const pattern1 = /^(?![_.])[a-zA-Z0-9._]{5,32}(?<![_.])$/;
+    const pattern2 = /\.[a-zA-Z]{1,3}$/;
+    const pattern3 = /\.[a-zA-Z]{2,2}\./;
+    const pattern4 = /\.\./;
+    const pattern5 = /^[0-9]{3,}/;
+    if (!pattern1.test(username))
+        return false;
+    if (pattern2.test(username))
+        return false;
+    if (pattern3.test(username))
+        return false;
+    if (pattern4.test(username))
+        return false;
+    if (pattern5.test(username))
+        return false;
+    return true;
 }
 
 const isAvailable = async (username) => {

@@ -1,8 +1,8 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
-    // to do
-    const pattern = /^(?!\.)[a-zA-Z0-9.\-_]{3,30}$/;
+    // should also allow spaces
+    const pattern = /^(?![0-9])[a-zA-Z0-9]{2,12}$/;
     return pattern.test(username);
 }
 
@@ -22,9 +22,11 @@ const isAvailable = async (username) => {
 
     let usernameAvailable = false;
     const title = await page.title();
-    // console.log(title);
     if (title === 'Xbox Gamertag - Search Xbox Live Profiles, Xbox Clips, Gamertags, Gamertag Suggestions, Xbox Tracker & More')
         usernameAvailable = true;
+    if (title === '500 Internal Server Error - Xbox Gamertag')
+        return 'unknown';
+
 
     await browser.close();
     console.log(`xbox finish check ${username}`);
@@ -40,5 +42,10 @@ export const check = async (username) => {
     //     return 'manual';
     // }
 
-    return await isAvailable(username) ? '1available' : '4taken';
+    const result = await isAvailable(username);
+    if (result == true)
+        return '1available';
+    if (result == false)
+        return '4taken';
+    return '6unknown';
 }

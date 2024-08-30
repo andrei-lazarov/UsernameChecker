@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
-    const pattern = /^(?!\.)[a-zA-Z0-9._]{0,30}(?<!\.com)$/;
+    const pattern = /^(?!\.)[a-zA-Z0-9._]{0,30}(?<!\.com)$/; //ok
     return pattern.test(username);
 }
 
@@ -55,7 +55,7 @@ export const check = async (username) => {
     //     return 'manual';
     // }
 
-    return await isAvailable(username) ? '1available' : '4taken';
+    return await isAvailable(username) ? '2manual' : '4taken';
 }
 
 // Try with available and taken usernames

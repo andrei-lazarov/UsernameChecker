@@ -7,7 +7,7 @@ function delay(time) {
 }
 
 const isValid = (username) => {
-    const pattern = /^[a-zA-Z0-9_]{0,15}$/;
+    const pattern = /^[a-zA-Z0-9_]{0,15}$/; //ok
     return pattern.test(username);
 }
 
@@ -25,11 +25,25 @@ const isAvailable = async (username) => {
 
     let usernameAvailable = false;
     await delay(2000);
-    const title = await page.title();
-    console.log(title);
-    if (title === 'Profile / X')
-        usernameAvailable = true;
 
+    const title = await page.title();
+
+    if (title != 'Profile / X')
+        usernameAvailable = false;
+    else {
+        usernameAvailable = await page.evaluate(() => {
+            const elements = document.querySelectorAll('span');
+            for (const element of elements) {
+                const selfText = element.textContent.trim();
+                if (selfText == 'Account suspended')
+                    return false;
+                if (selfText == "This account doesn’t exist") {
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
     await browser.close();
     console.log(`twitter finish check ${username}`);
     return usernameAvailable;

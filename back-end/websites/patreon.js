@@ -1,8 +1,9 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
-    // to do
-    const pattern = /^(?!\.)[a-zA-Z0-9.\-_]{3,30}$/;
+    // ok
+    const pattern = /^(?=.*[a-zA-Z])[a-zA-Z0-9_]{1,64}$/;
+    // at least one letter
     return pattern.test(username);
 }
 
@@ -14,13 +15,15 @@ const isAvailable = async (username) => {
     });
 
     const page = await browser.newPage();
+    const customUserAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+    await page.setUserAgent(customUserAgent);
     await page.goto(`https://www.patreon.com/${username}/`, {
         waitUntil: "domcontentloaded",
     });
 
     let usernameAvailable = false;
     const title = await page.title();
-    if (title == 'This page could not be found — Patreon')
+    if (title == 'Not found | Patreon' || title == 'This page could not be found — Patreon')
         usernameAvailable = true;
 
     await browser.close();

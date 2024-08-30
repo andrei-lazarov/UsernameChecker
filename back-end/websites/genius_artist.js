@@ -1,8 +1,8 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
-    // to do
-    const pattern = /^(?!\.)[a-zA-Z0-9\-_]{3,30}$/;
+    // probably same as user
+    const pattern = /^(?=.*[a-zA-Z])[a-zA-Z0-9\-_]{1,50}$/;
     return pattern.test(username);
 }
 
@@ -14,6 +14,8 @@ const isAvailable = async (username) => {
     });
 
     const page = await browser.newPage();
+    const customUserAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+    await page.setUserAgent(customUserAgent);
     await page.goto(`https://genius.com/artists/${username}`, {
         waitUntil: "domcontentloaded",
     });

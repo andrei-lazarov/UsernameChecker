@@ -20,21 +20,383 @@
             <button id="checkButton" onclick="submit()">Check</button>
         </div>
     </div>
+    <div id="compareModal" class="modal">
+        <div class="modal-content">
+            <div id="close-container">
+                <div class="close" onclick="closeModal()">&times;</div>
+            </div>
+            <div id="modalFilterBox" class="optionBox">
+                Category
+                <button id="modalCategoryEmail" class="modalCategoryButton">Email</button>
+                <button id="modalCategorySocial" class="modalCategoryButton">Social</button>
+                <button id="modalCategoryVideo" class="modalCategoryButton">Video</button>
+                <button id="modalCategoryDev" class="modalCategoryButton">Dev</button>
+                <button id="modalCategoryGaming" class="modalCategoryButton">Gaming</button>
+                <button id="modalCategoryBlogging" class="modalCategoryButton">Blogging</button>
+                <button id="modalCategoryProfessional" class="modalCategoryButton">Professional</button>
+                <button id="modalCategoryMusic" class="modalCategoryButton">Music</button>
+                <button id="modalCategoryArt" class="modalCategoryButton">Art</button>
+            </div>
+            <div id="table-container">
+                <table id="table">
+                    <tr>
+                        <th class="cell-username">Username</th>
+                        <th class="cell-header" data-all="y">Score</th>
+                        <th class="cell-header" data-all="y">Email (5)</th>
+                        <th class="cell-header" data-all="y">Social (7)</th>
+                        <th class="cell-header" data-all="y">Video (5)</th>
+                        <th class="cell-header" data-all="y">Dev (13)</th>
+                        <th class="cell-header" data-all="y">Game (7)</th>
+                        <th class="cell-header" data-all="y">Blog (6)</th>
+                        <th class="cell-header" data-all="y">Prof (8)</th>
+                        <th class="cell-header" data-all="y">Music (6)</th>
+                        <th class="cell-header" data-all="y">Art (8)</th>
+                        <th class="cell-header" id="small-gmail" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="y" data-order="0.1">
+                            <img class="small-logo" src="logos/gmail.png" alt="gmail"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-yahoo" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="y" data-order="0.2">
+                            <img class="small-logo" src="logos/yahoo.png" alt="yahoo"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-outlook" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="y" data-order="0.3">
+                            <img class="small-logo" src="logos/outlook.png" alt="outlook"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-aol" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="y" data-order="0.4">
+                            <img class="small-logo" src="logos/aol.png" alt="aol"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-proton" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="y" data-order="0.5">
+                            <img class="small-logo" src="logos/proton.jpeg" alt="proton"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-facebook" data-social="y" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="1">
+                            <img class="small-logo" src="logos/facebook.png" alt="facebook"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-instagram" data-social="y" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="y" data-music="n" data-dev="n"
+                            data-email="n" data-order="2">
+                            <img class="small-logo" src="logos/instagram.webp" alt="instagram"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-twitter" data-social="y" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="3">
+                            <img class="small-logo" src="logos/twitter.png" alt="Twitter"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-snapchat" data-social="y" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="4">
+                            <img class="small-logo" src="logos/snapchat.png" alt="snapchat"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-mastodon" data-social="y" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="5">
+                            <img class="small-logo" src="logos/mastodon.png" alt="mastodon"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-tiktok" data-social="y" data-video="y" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="y" data-dev="n"
+                            data-email="n" data-order="6">
+                            <img class="small-logo" src="logos/tiktok.png" alt="tiktok"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-youtube" data-social="n" data-video="y" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="y" data-dev="n"
+                            data-email="n" data-order="7">
+                            <img class="small-logo" src="logos/youtube.png" alt="youtube"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-twitch" data-social="n" data-video="y" data-blogging="n"
+                            data-professional="n" data-gaming="y" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="7.1">
+                            <img class="small-logo" src="logos/twitch.png" alt="twitch"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-vimeo" data-social="n" data-video="y" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="8">
+                            <img class="small-logo" src="logos/vimeo.png" alt="vimeo"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-vk" data-social="n" data-video="y" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="8.1">
+                            <img class="small-logo" src="logos/vk.png" alt="vk"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-linkedin" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="y" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="9">
+                            <img class="small-logo" src="logos/linkedin.png" alt="linkedin"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-patreon" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="y" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="10">
+                            <img class="small-logo" src="logos/patreon.webp" alt="patreon"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-fiverr" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="y" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="11">
+                            <img class="small-logo" src="logos/fiverr.png" alt="fiverr"></img>
+                        </th>
+
+                        <!-- <th class="cell-header" id="small-playstore" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="y" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="11.1">
+                            <img class="small-logo" src="logos/playstore.png" alt="playstore"></img>
+                        </th> -->
+
+                        <th class="cell-header" id="small-github" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="y" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="12">
+                            <img class="small-logo" src="logos/github.png" alt="github"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-gitlab" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="y" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="13">
+                            <img class="small-logo" src="logos/gitlab.png" alt="gitlab"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-reddit" data-social="y" data-video="n" data-blogging="y"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="14">
+                            <img class="small-logo" src="logos/reddit.png" alt="reddit"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-medium" data-social="n" data-video="n" data-blogging="y"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="15">
+                            <img class="small-logo" src="logos/medium.png" alt="medium"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-blogger/blogspot" data-social="n" data-video="n"
+                            data-blogging="y" data-professional="n" data-gaming="n" data-art="n" data-music="n"
+                            data-dev="n" data-email="n" data-order="16"> <img class="small-logo" src="logos/blogger.png"
+                                alt="blogger"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-wordpress" data-social="n" data-video="n" data-blogging="y"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="17">
+                            <img class="small-logo" src="logos/wordpress.png" alt="wordpress"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-hackernews" data-social="n" data-video="n" data-blogging="y"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="18">
+                            <img class="small-logo" src="logos/hackernews.png" alt="hackernews"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-producthunt" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="y" data-gaming="n" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="19">
+                            <img class="small-logo" src="logos/producthunt.png" alt="producthunt"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-steam" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="y" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="20">
+                            <img class="small-logo" src="logos/steam.png" alt="steam"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-xbox" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="y" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="21">
+                            <img class="small-logo" src="logos/xbox.png" alt="xbox"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-playstation" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="y" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="21.1">
+                            <img class="small-logo" src="logos/playstation.webp" alt="playstation"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-minecraft" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="y" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="22">
+                            <img class="small-logo" src="logos/minecraft.png" alt="minecraft"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-roblox" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="y" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="23">
+                            <img class="small-logo" src="logos/roblox.png" alt="roblox"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-osu" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="y" data-art="n" data-music="n" data-dev="n"
+                            data-email="n" data-order="24">
+                            <img class="small-logo" src="logos/osu.png" alt="osu"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-deviantart" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="y" data-music="n" data-dev="n"
+                            data-email="n" data-order="25">
+                            <img class="small-logo" src="logos/deviantart.jpg" alt="deviantart"></img>
+                        </th>
+
+                        <!-- <th class="cell-header" id="small-spotify" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="y" data-dev="n"
+                            data-email="n" data-order="26">
+                            <img class="small-logo" src="logos/spotify.png" alt="spotify"></img>
+                        </th> -->
+
+                        <th class="cell-header" id="small-soundcloud" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="y" data-dev="n"
+                            data-email="n" data-order="27">
+                            <img class="small-logo" src="logos/soundcloud.png" alt="soundcloud"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-genius_user" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="y" data-dev="n"
+                            data-email="n" data-order="28">
+                            <img class="small-logo" src="logos/genius_user.png" alt="genius user"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-genius_artist" data-social="n" data-video="n"
+                            data-blogging="n" data-professional="y" data-gaming="n" data-art="n" data-music="y"
+                            data-dev="n" data-email="n" data-order="29"> <img class="small-logo"
+                                src="logos/genius_artist.png" alt="genius artist"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-imgur" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="y" data-music="n" data-dev="n"
+                            data-email="n" data-order="29.1">
+                            <img class="small-logo" src="logos/imgur.png" alt="imgur"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-pinterest" data-social="n" data-video="n" data-blogging="y"
+                            data-professional="n" data-gaming="n" data-art="y" data-music="n" data-dev="n"
+                            data-email="n" data-order="29.2">
+                            <img class="small-logo" src="logos/pinterest.png" alt="pinterest"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-unsplash" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="y" data-music="n" data-dev="n"
+                            data-email="n" data-order="30">
+                            <img class="small-logo" src="logos/unsplash.png" alt="unsplash"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-flickr" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="y" data-music="n" data-dev="n"
+                            data-email="n" data-order="31">
+                            <img class="small-logo" src="logos/flickr.png" alt="flickr"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-vsco" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="y" data-music="n" data-dev="n"
+                            data-email="n" data-order="32">
+                            <img class="small-logo" src="logos/vsco.png" alt="vsco"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-dribbble" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="y" data-music="n" data-dev="n"
+                            data-email="n" data-order="32.1">
+                            <img class="small-logo" src="logos/dribbble.jpeg" alt="dribbble"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-npm" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="33">
+                            <img class="small-logo" src="logos/npm.png" alt="npm"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-pypi" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="34">
+                            <img class="small-logo" src="logos/pypi.png" alt="pypi"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-rubygems" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="35">
+                            <img class="small-logo" src="logos/rubygems.jpeg" alt="rubygems"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-kaggle" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="36">
+                            <img class="small-logo" src="logos/kaggle.png" alt="kaggle"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-codecademy" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="37">
+                            <img class="small-logo" src="logos/codecademy.png" alt="codecademy"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-geeksforgeeks" data-social="n" data-video="n"
+                            data-blogging="n" data-professional="n" data-gaming="n" data-art="n" data-music="n"
+                            data-dev="y" data-email="n" data-order="38"> <img class="small-logo"
+                                src="logos/geeksforgeeks.png" alt="geeksforgeeks"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-leetcode" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="39">
+                            <img class="small-logo" src="logos/leetcode.png" alt="leetcode"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-codepen" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="40">
+                            <img class="small-logo" src="logos/codepen.png" alt="codepen"></img>
+                        </th>
+
+                        <th class="cell-header" id="small-hackerrank" data-social="n" data-video="n" data-blogging="n"
+                            data-professional="n" data-gaming="n" data-art="n" data-music="n" data-dev="y"
+                            data-email="n" data-order="41">
+                            <img class="small-logo" src="logos/hackerrank.png" alt="hackerrank"></img>
+                        </th>
+                    </tr>
+
+                </table>
+            </div>
+            <a id="clear-table" href="/front-end/">Clear</a>
+        </div>
+    </div>
     <div class="bottom">
         <div id="hiddenUntilInput" class="hidden">
-            <h2 id="score"> Username is available on 0% of the websites</h2>
+            <div id="loadingBox">
+                <h2 id="loadingMsg"> Loading...</h2>
+            </div>
+            <div id="resultBox">
+                <h2 id="score"> Username is available on 0% of the websites.</h2>
+                <button id="compareButton" onclick="openModal()">Compare</button>
+            </div>
             <div id="options">
 
                 <div id="filterBox" class="optionBox">
                     Filter
-                    <button id="categorySocial" class="categoryButton active">Social</button>
-                    <button id="categoryVideo" class="categoryButton active">Video</button>
-                    <button id="categoryDev" class="categoryButton active">Dev</button>
-                    <button id="categoryGaming" class="categoryButton active">Gaming</button>
-                    <button id="categoryBlogging" class="categoryButton active">Blogging</button>
-                    <button id="categoryProfessional" class="categoryButton active">Professional</button>
-                    <button id="categoryMusic" class="categoryButton active">Music</button>
-                    <button id="categoryArt" class="categoryButton active">Art</button>
+                    <button id="categoryEmail" class="categoryButton">Email</button>
+                    <button id="categorySocial" class="categoryButton">Social</button>
+                    <button id="categoryVideo" class="categoryButton">Video</button>
+                    <button id="categoryDev" class="categoryButton">Dev</button>
+                    <button id="categoryGaming" class="categoryButton">Gaming</button>
+                    <button id="categoryBlogging" class="categoryButton">Blogging</button>
+                    <button id="categoryProfessional" class="categoryButton">Professional</button>
+                    <button id="categoryMusic" class="categoryButton">Music</button>
+                    <button id="categoryArt" class="categoryButton">Art</button>
                 </div>
                 <div id="sortSearchBox">
                     <div id="sortBox" class="optionBox">
@@ -55,290 +417,320 @@
         </div>
         <div id="grid-container">
 
-            <a target="_blank" target="_blank" href="https://facebook.com/" class="grid-item" id="facebook"
-                data-status="1available" data-social="y" data-video="n" data-blogging="n" data-professional="n"
-                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="1"> <img
-                    src="logos/facebook.png" alt="facebook"></img>
+            <a target="_blank" href="https://accounts.google.com/SignUp/" class="grid-item" id="gmail"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-dev="n" data-email="y" data-order="0.1"> <img
+                    class="logo" src="logos/gmail.png" alt="gmail"></img>
             </a>
 
-            <a target="_blank" href="https://instagram.com/" class="grid-item" id="instagram" data-status="2manual"
+            <a target="_blank" href="https://login.yahoo.com/account/create/" class="grid-item" id="yahoo"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-dev="n" data-email="y" data-order="0.2"> <img
+                    class="logo" src="logos/yahoo.png" alt="yahoo"></img>
+            </a>
+
+            <a target="_blank" href="https://signup.live.com/" class="grid-item" id="outlook" data-status="6unknown"
+                data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
+                data-music="n" data-dev="n" data-email="y" data-order="0.3"> <img class="logo" src="logos/outlook.png"
+                    alt="outlook"></img>
+            </a>
+
+            <a target="_blank" href="https://login.aol.com/account/create/" class="grid-item" id="aol"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-dev="n" data-email="y" data-order="0.4"> <img
+                    class="logo" src="logos/aol.png" alt="aol"></img>
+            </a>
+
+            <a target="_blank" href="https://account.proton.me/mail/signup/" class="grid-item" id="proton"
+                data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
+                data-gaming="n" data-art="n" data-music="n" data-dev="n" data-email="y" data-order="0.5"> <img
+                    class="logo" src="logos/proton.jpeg" alt="proton"></img>
+            </a>
+
+            <a target="_blank" href="https://facebook.com/" class="grid-item" id="facebook" data-status="6unknown"
+                data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
+                data-music="n" data-dev="n" data-email="n" data-order="1"> <img class="logo" src="logos/facebook.png"
+                    alt="facebook"></img>
+            </a>
+
+            <a target="_blank" href="https://instagram.com/" class="grid-item" id="instagram" data-status="6unknown"
                 data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
-                data-music="n" data-photography="y" data-dev="n" data-order="2"> <img src="logos/instagram.webp"
+                data-music="n" data-dev="n" data-email="n" data-order="2"> <img class="logo" src="logos/instagram.webp"
                     alt="instagram"></img>
             </a>
 
-            <a target="_blank" href="https://twitter.com/" class="grid-item" id="twitter" data-status="3invalid"
+            <a target="_blank" href="https://twitter.com/" class="grid-item" id="twitter" data-status="6unknown"
                 data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="3"> <img src="logos/twitter.png"
+                data-music="n" data-dev="n" data-email="n" data-order="3"> <img class="logo" src="logos/twitter.png"
                     alt="Twitter"></img>
             </a>
 
             <a target="_blank" href="https://snapchat.com/" class="grid-item" id="snapchat" data-status="6unknown"
                 data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="4"> <img src="logos/snapchat.png"
+                data-music="n" data-dev="n" data-email="n" data-order="4"> <img class="logo" src="logos/snapchat.png"
                     alt="snapchat"></img>
             </a>
 
             <a target="_blank" href="https://mastodon.social/" class="grid-item" id="mastodon" data-status="6unknown"
                 data-social="y" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="5"> <img src="logos/mastodon.png"
+                data-music="n" data-dev="n" data-email="n" data-order="5"> <img class="logo" src="logos/mastodon.png"
                     alt="mastodon"></img>
             </a>
 
             <a target="_blank" href="https://tiktok.com/" class="grid-item" id="tiktok" data-status="6unknown"
                 data-social="y" data-video="y" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="y" data-photography="n" data-dev="n" data-order="6"> <img src="logos/tiktok.png"
+                data-music="y" data-dev="n" data-email="n" data-order="6"> <img class="logo" src="logos/tiktok.png"
                     alt="tiktok"></img>
             </a>
 
             <a target="_blank" href="https://youtube.com/" class="grid-item" id="youtube" data-status="6unknown"
                 data-social="n" data-video="y" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="y" data-photography="n" data-dev="n" data-order="7"> <img src="logos/youtube.png"
+                data-music="y" data-dev="n" data-email="n" data-order="7"> <img class="logo" src="logos/youtube.png"
                     alt="youtube"></img>
             </a>
 
             <a target="_blank" href="https://twitch.tv/" class="grid-item" id="twitch" data-status="6unknown"
                 data-social="n" data-video="y" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="7.1"> <img src="logos/twitch.png"
+                data-music="n" data-dev="n" data-email="n" data-order="7.1"> <img class="logo" src="logos/twitch.png"
                     alt="twitch"></img>
             </a>
 
             <a target="_blank" href="https://vimeo.com/" class="grid-item" id="vimeo" data-status="6unknown"
                 data-social="n" data-video="y" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="8"> <img src="logos/vimeo.png"
+                data-music="n" data-dev="n" data-email="n" data-order="8"> <img class="logo" src="logos/vimeo.png"
                     alt="vimeo"></img>
             </a>
 
             <a target="_blank" href="https://vk.com/" class="grid-item" id="vk" data-status="6unknown" data-social="n"
                 data-video="y" data-blogging="n" data-professional="n" data-gaming="n" data-art="n" data-music="n"
-                data-photography="n" data-dev="n" data-order="8.1"> <img src="logos/vk.png" alt="vk"></img>
+                data-dev="n" data-email="n" data-order="8.1"> <img class="logo" src="logos/vk.png" alt="vk"></img>
             </a>
 
             <a target="_blank" href="https://linkedin.com/" class="grid-item" id="linkedin" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="9"> <img src="logos/linkedin.png"
+                data-music="n" data-dev="n" data-email="n" data-order="9"> <img class="logo" src="logos/linkedin.png"
                     alt="linkedin"></img>
             </a>
 
             <a target="_blank" href="https://patreon.com/" class="grid-item" id="patreon" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="10"> <img src="logos/patreon.webp"
+                data-music="n" data-dev="n" data-email="n" data-order="10"> <img class="logo" src="logos/patreon.webp"
                     alt="patreon"></img>
             </a>
 
             <a target="_blank" href="https://fiverr.com/" class="grid-item" id="fiverr" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="11"> <img src="logos/fiverr.png"
+                data-music="n" data-dev="n" data-email="n" data-order="11"> <img class="logo" src="logos/fiverr.png"
                     alt="fiverr"></img>
             </a>
 
-            <a target="_blank" href="https://play.google.com/" class="grid-item" id="playstore" data-status="6unknown"
+            <!-- <a target="_blank" href="https://play.google.com/" class="grid-item" id="playstore" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="11.1"> <img src="logos/playstore.png"
-                    alt="playstore"></img>
-            </a>
+                data-music="n" data-dev="y" data-email="n" data-order="11.1"> <img class="logo"
+                    src="logos/playstore.png" alt="playstore"></img>
+            </a> -->
 
             <a target="_blank" href="https://github.com/" class="grid-item" id="github" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="12"> <img src="logos/github.png"
+                data-music="n" data-dev="y" data-email="n" data-order="12"> <img class="logo" src="logos/github.png"
                     alt="github"></img>
             </a>
 
             <a target="_blank" href="https://gitlab.com/" class="grid-item" id="gitlab" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="13"> <img src="logos/gitlab.png"
+                data-music="n" data-dev="y" data-email="n" data-order="13"> <img class="logo" src="logos/gitlab.png"
                     alt="gitlab"></img>
             </a>
 
             <a target="_blank" href="https://reddit.com/" class="grid-item" id="reddit" data-status="6unknown"
                 data-social="y" data-video="n" data-blogging="y" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="14"> <img src="logos/reddit.png"
+                data-music="n" data-dev="n" data-email="n" data-order="14"> <img class="logo" src="logos/reddit.png"
                     alt="reddit"></img>
             </a>
 
             <a target="_blank" href="https://medium.com/" class="grid-item" id="medium" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="y" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="15"> <img src="logos/medium.png"
+                data-music="n" data-dev="n" data-email="n" data-order="15"> <img class="logo" src="logos/medium.png"
                     alt="medium"></img>
             </a>
 
             <a target="_blank" href="https://blogger.com/" class="grid-item" id="blogger/blogspot"
                 data-status="6unknown" data-social="n" data-video="n" data-blogging="y" data-professional="n"
-                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="n" data-order="16"> <img
-                    src="logos/blogger.png" alt="blogger"></img>
+                data-gaming="n" data-art="n" data-music="n" data-dev="n" data-email="n" data-order="16"> <img
+                    class="logo" src="logos/blogger.png" alt="blogger"></img>
             </a>
 
             <a target="_blank" href="https://wordpress.com/" class="grid-item" id="wordpress" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="y" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="17"> <img src="logos/wordpress.png"
+                data-music="n" data-dev="n" data-email="n" data-order="17"> <img class="logo" src="logos/wordpress.png"
                     alt="wordpress"></img>
             </a>
 
             <a target="_blank" href="https://hackernews.com/" class="grid-item" id="hackernews" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="y" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="18"> <img src="logos/hackernews.png"
+                data-music="n" data-dev="y" data-email="n" data-order="18"> <img class="logo" src="logos/hackernews.png"
                     alt="hackernews"></img>
             </a>
 
             <a target="_blank" href="https://producthunt.com/" class="grid-item" id="producthunt" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="y" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="19"> <img src="logos/producthunt.png"
-                    alt="producthunt"></img>
+                data-music="n" data-dev="n" data-email="n" data-order="19"> <img class="logo"
+                    src="logos/producthunt.png" alt="producthunt"></img>
             </a>
 
             <a target="_blank" href="https://steamcommunity.com/" class="grid-item" id="steam" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="20"> <img src="logos/steam.png"
+                data-music="n" data-dev="n" data-email="n" data-order="20"> <img class="logo" src="logos/steam.png"
                     alt="steam"></img>
             </a>
 
             <a target="_blank" href="https://xboxgamertag.com/" class="grid-item" id="xbox" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="21"> <img src="logos/xbox.png"
+                data-music="n" data-dev="n" data-email="n" data-order="21"> <img class="logo" src="logos/xbox.png"
                     alt="xbox"></img>
             </a>
 
             <a target="_blank" href="https://psnprofiles.com/" class="grid-item" id="playstation" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="21.1"> <img src="logos/playstation.webp"
-                    alt="playstation"></img>
+                data-music="n" data-dev="n" data-email="n" data-order="21.1"> <img class="logo"
+                    src="logos/playstation.webp" alt="playstation"></img>
             </a>
 
             <a target="_blank" href="https://minecraftuuid.com/" class="grid-item" id="minecraft" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="22"> <img src="logos/minecraft.png"
+                data-music="n" data-dev="n" data-email="n" data-order="22"> <img class="logo" src="logos/minecraft.png"
                     alt="minecraft"></img>
             </a>
 
             <a target="_blank" href="https://roblox.com/" class="grid-item" id="roblox" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="23"> <img src="logos/roblox.png"
+                data-music="n" data-dev="n" data-email="n" data-order="23"> <img class="logo" src="logos/roblox.png"
                     alt="roblox"></img>
             </a>
 
             <a target="_blank" href="https://osu.ppy.sh/" class="grid-item" id="osu" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="y" data-art="n"
-                data-music="n" data-photography="n" data-dev="n" data-order="24"> <img src="logos/osu.png"
+                data-music="n" data-dev="n" data-email="n" data-order="24"> <img class="logo" src="logos/osu.png"
                     alt="osu"></img>
             </a>
 
             <a target="_blank" href="https://deviantart.com/" class="grid-item" id="deviantart" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
-                data-music="n" data-photography="y" data-dev="n" data-order="25"> <img src="logos/deviantart.jpg"
+                data-music="n" data-dev="n" data-email="n" data-order="25"> <img class="logo" src="logos/deviantart.jpg"
                     alt="deviantart"></img>
             </a>
 
-            <a target="_blank" href="https://spotify.com/" class="grid-item" id="spotify" data-status="6unknown"
+            <!-- <a target="_blank" href="https://spotify.com/" class="grid-item" id="spotify" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="y" data-photography="n" data-dev="n" data-order="26"> <img src="logos/spotify.png"
+                data-music="y" data-dev="n" data-email="n" data-order="26"> <img class="logo" src="logos/spotify.png"
                     alt="spotify"></img>
-            </a>
+            </a> -->
 
             <a target="_blank" href="https://soundcloud.com/" class="grid-item" id="soundcloud" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="y" data-photography="n" data-dev="n" data-order="27"> <img src="logos/soundcloud.png"
+                data-music="y" data-dev="n" data-email="n" data-order="27"> <img class="logo" src="logos/soundcloud.png"
                     alt="soundcloud"></img>
             </a>
 
             <a target="_blank" href="https://genius.com/" class="grid-item" id="genius_user" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="y" data-photography="n" data-dev="n" data-order="28"> <img src="logos/genius_user.png"
-                    alt="genius user" img>
+                data-music="y" data-dev="n" data-email="n" data-order="28"> <img class="logo"
+                    src="logos/genius_user.png" alt="genius user"></img>
             </a>
 
             <a target="_blank" href="https://genius.com/artists/" class="grid-item" id="genius_artist"
                 data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="y"
-                data-gaming="n" data-art="n" data-music="y" data-photography="n" data-dev="n" data-order="29"> <img
-                    src="logos/genius_artist.png" alt="genius artist"></img>
+                data-gaming="n" data-art="n" data-music="y" data-dev="n" data-email="n" data-order="29"> <img
+                    class="logo" src="logos/genius_artist.png" alt="genius artist"></img>
             </a>
 
             <a target="_blank" href="https://imgur.com/" class="grid-item" id="imgur" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
-                data-music="n" data-photography="n" data-dev="n" data-order="29.1"> <img src="logos/imgur.png"
+                data-music="n" data-dev="n" data-email="n" data-order="29.1"> <img class="logo" src="logos/imgur.png"
                     alt="imgur"></img>
             </a>
 
             <a target="_blank" href="https://pinterest.com/" class="grid-item" id="pinterest" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="y" data-professional="n" data-gaming="n" data-art="y"
-                data-music="n" data-photography="y" data-dev="n" data-order="29.2"> <img src="logos/pinterest.png"
-                    alt="pinterest"></img>
+                data-music="n" data-dev="n" data-email="n" data-order="29.2"> <img class="logo"
+                    src="logos/pinterest.png" alt="pinterest"></img>
             </a>
 
             <a target="_blank" href="https://unsplash.com/" class="grid-item" id="unsplash" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
-                data-music="n" data-photography="y" data-dev="n" data-order="30"> <img src="logos/unsplash.png"
+                data-music="n" data-dev="n" data-email="n" data-order="30"> <img class="logo" src="logos/unsplash.png"
                     alt="unsplash"></img>
             </a>
 
             <a target="_blank" href="https://flickr.com/" class="grid-item" id="flickr" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
-                data-music="n" data-photography="y" data-dev="n" data-order="31"> <img src="logos/flickr.png"
+                data-music="n" data-dev="n" data-email="n" data-order="31"> <img class="logo" src="logos/flickr.png"
                     alt="flickr"></img>
             </a>
 
             <a target="_blank" href="https://vsco.co/" class="grid-item" id="vsco" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
-                data-music="n" data-photography="y" data-dev="n" data-order="32"> <img src="logos/vsco.png"
+                data-music="n" data-dev="n" data-email="n" data-order="32"> <img class="logo" src="logos/vsco.png"
                     alt="vsco"></img>
             </a>
 
             <a target="_blank" href="https://dribbble.com/" class="grid-item" id="dribbble" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="y"
-                data-music="n" data-photography="n" data-dev="n" data-order="32.1"> <img src="logos/dribbble.jpeg"
-                    alt="dribbble"></img>
+                data-music="n" data-dev="n" data-email="n" data-order="32.1"> <img class="logo"
+                    src="logos/dribbble.jpeg" alt="dribbble"></img>
             </a>
 
             <a target="_blank" href="https://npmjs.com/" class="grid-item" id="npm" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="33"> <img src="logos/npm.png"
+                data-music="n" data-dev="y" data-email="n" data-order="33"> <img class="logo" src="logos/npm.png"
                     alt="npm"></img>
             </a>
 
             <a target="_blank" href="https://pypi.org/" class="grid-item" id="pypi" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="34"> <img src="logos/pypi.png"
+                data-music="n" data-dev="y" data-email="n" data-order="34"> <img class="logo" src="logos/pypi.png"
                     alt="pypi"></img>
             </a>
 
             <a target="_blank" href="https://rubygems.org/" class="grid-item" id="rubygems" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="35"> <img src="logos/rubygems.jpeg"
+                data-music="n" data-dev="y" data-email="n" data-order="35"> <img class="logo" src="logos/rubygems.jpeg"
                     alt="rubygems"></img>
             </a>
 
             <a target="_blank" href="https://kaggle.com/" class="grid-item" id="kaggle" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="36"> <img src="logos/kaggle.png"
+                data-music="n" data-dev="y" data-email="n" data-order="36"> <img class="logo" src="logos/kaggle.png"
                     alt="kaggle"></img>
             </a>
 
             <a target="_blank" href="https://codecademy.com/" class="grid-item" id="codecademy" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="37"> <img src="logos/codecademy.png"
+                data-music="n" data-dev="y" data-email="n" data-order="37"> <img class="logo" src="logos/codecademy.png"
                     alt="codecademy"></img>
             </a>
 
             <a target="_blank" href="https://geeksforgeeks.org/" class="grid-item" id="geeksforgeeks"
                 data-status="6unknown" data-social="n" data-video="n" data-blogging="n" data-professional="n"
-                data-gaming="n" data-art="n" data-music="n" data-photography="n" data-dev="y" data-order="38"> <img
-                    src="logos/geeksforgeeks.png" alt="geeksforgeeks"></img>
+                data-gaming="n" data-art="n" data-music="n" data-dev="y" data-email="n" data-order="38"> <img
+                    class="logo" src="logos/geeksforgeeks.png" alt="geeksforgeeks"></img>
             </a>
 
             <a target="_blank" href="https://leetcode.com/" class="grid-item" id="leetcode" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="39"> <img src="logos/leetcode.png"
+                data-music="n" data-dev="y" data-email="n" data-order="39"> <img class="logo" src="logos/leetcode.png"
                     alt="leetcode"></img>
             </a>
 
             <a target="_blank" href="https://codepen.io/" class="grid-item" id="codepen" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="40"> <img src="logos/codepen.png"
+                data-music="n" data-dev="y" data-email="n" data-order="40"> <img class="logo" src="logos/codepen.png"
                     alt="codepen"></img>
             </a>
 
             <a target="_blank" href="https://hackerrank.com/" class="grid-item" id="hackerrank" data-status="6unknown"
                 data-social="n" data-video="n" data-blogging="n" data-professional="n" data-gaming="n" data-art="n"
-                data-music="n" data-photography="n" data-dev="y" data-order="41"> <img src="logos/hackerrank.png"
+                data-music="n" data-dev="y" data-email="n" data-order="41"> <img class="logo" src="logos/hackerrank.png"
                     alt="hackerrank"></img>
             </a>
 
@@ -346,12 +738,12 @@
         <div id="legend-hider" class="hidden">
             <div id="legend">
                 <div id="legend-title">Legend:</div>
-                <div class="available legend-tag">Available</div>
-                <div class="manual legend-tag">Manual check</div>
-                <div class="invalid legend-tag">Invalid</div>
-                <div class="taken legend-tag">Taken</div>
-                <div class="loading legend-tag">Loading</div>
-                <div class="unknown legend-tag">Unknown</div>
+                <div class="available available-border legend-tag">Available</div>
+                <div class="manual manual-border legend-tag">Manual check</div>
+                <div class="invalid invalid-border legend-tag">Invalid</div>
+                <div class="taken taken-border legend-tag">Taken</div>
+                <div class="loading loading-border legend-tag">Loading</div>
+                <div class="unknown unknown-border legend-tag">Unknown</div>
             </div>
         </div>
     </div>
@@ -363,6 +755,8 @@
     <script src="javascript/input.js"></script>
     <script src="javascript/request.js"></script>
     <script src="javascript/enter.js"></script>
+    <script src="javascript/filterModal.js"></script>
+    <script src="javascript/compare.js"></script>
 </body>
 
 </html>

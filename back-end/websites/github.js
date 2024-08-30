@@ -1,6 +1,7 @@
 import puppeteer from "puppeteer";
 
 const isValid = (username) => {
+    // trust
     const pattern = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
     return pattern.test(username);
 }
