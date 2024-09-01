@@ -15,7 +15,7 @@ const isAvailable = async (username) => {
 
     const page = await browser.newPage();
     await page.goto('https://login.yahoo.com/account/create', {
-        waitUntil: "domcontentloaded",
+        waitUntil: "networkidle2",
     });
 
     // find username field and fill it

@@ -26,8 +26,8 @@ function updateAvailability(website, username, newStatus) {
 
 async function requestSingle(website, username) {
     try {
-        // const serverIP = '34.45.227.251';
-        const serverIP = 'localhost';
+        const serverIP = '35.222.50.215';
+        // const serverIP = 'localhost';
         const response = await fetch(`http://${serverIP}:3000/requestSingle`, {
             method: 'POST',
             headers: {
