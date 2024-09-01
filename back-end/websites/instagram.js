@@ -55,7 +55,8 @@ export const check = async (username) => {
     //     return 'manual';
     // }
 
-    return await isAvailable(username) ? '2manual' : '4taken';
+    // return await isAvailable(username) ? '2manual' : '4taken';
+    return '2manual';
 }
 
 // Try with available and taken usernames
