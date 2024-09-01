@@ -35,5 +35,6 @@ export const check = async (username) => {
         return '3invalid';
     }
 
-    return await isAvailable(username) ? '1available' : '4taken';
+    // return await isAvailable(username) ? '1available' : '4taken';
+    return '2manual';
 }
