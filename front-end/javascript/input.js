@@ -1,6 +1,8 @@
 let availableWebsites = 0;
 let totalWebsites = 0;
 let usernameScore;
+let checkedUsernames = new Set();
+let loading = false;
 
 const scoreText = document.getElementById("score");
 
@@ -79,6 +81,7 @@ function updateLinks(username) {
 async function submit() {
     const button = document.getElementById('checkButton');
     button.disabled = true;
+    loading = true;
 
     const username = document.getElementById('inputField').value;
     const params = new URLSearchParams(window.location.search);
@@ -110,9 +113,11 @@ async function submit() {
     availableWebsites = 0;
     usernameScore = username;
 
+    if (!(checkedUsernames.has(username))) {
+        checkedUsernames.add(username);
 
-    const table = document.getElementById("table");
-    rowString = `<td class="cell-username">${username}</td>
+        const table = document.getElementById("table");
+        rowString = `<td class="cell-username">${username}</td>
 <td class="cell" id="${username}-score" data-all="y">0%</td>
 <td class="cell" id="${username}-email" data-all="y">0</td>
 <td class="cell" id="${username}-social" data-all="y">0</td>
@@ -223,12 +228,12 @@ async function submit() {
     data-gaming="n" data-art="n" data-music="n"   data-dev="y" data-email="n" data-order="40"></td>
 <td class="cell" id="${username}-hackerrank" data-social="n" data-video="n" data-blogging="n" data-professional="n"
     data-gaming="n" data-art="n" data-music="n"   data-dev="y" data-email="n" data-order="41"></td>`;
-    const newRow = document.createElement("tr");
-    newRow.innerHTML = rowString;
-    table.appendChild(newRow);
-    cells = table.querySelectorAll('.cell');
-    modalFilterItems();
-
+        const newRow = document.createElement("tr");
+        newRow.innerHTML = rowString;
+        table.appendChild(newRow);
+        cells = table.querySelectorAll('.cell');
+        modalFilterItems();
+    }
     const links = document.getElementById("grid-container").querySelectorAll("a");
     for (const link of links) {
         requestSingle(link.id, username);

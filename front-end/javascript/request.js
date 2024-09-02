@@ -26,8 +26,8 @@ function updateAvailability(website, username, newStatus) {
 
 async function requestSingle(website, username) {
     try {
-        const serverIP = '35.222.50.215';
-        // const serverIP = 'localhost';
+        // const serverIP = '35.222.50.215';
+        const serverIP = 'localhost';
         const response = await fetch(`http://${serverIP}:3000/requestSingle`, {
             method: 'POST',
             headers: {
@@ -99,6 +99,8 @@ async function requestSingle(website, username) {
                 }
             });
             compareButton.disabled = false;
+            loading = false;
+
         }
         else
             compareButton.disabled = true;

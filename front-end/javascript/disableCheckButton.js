@@ -10,5 +10,5 @@ if (inputField.value === '') {
 
 // Check on input change
 inputField.addEventListener('input', () => {
-    checkButton.disabled = inputField.value === '';
+    checkButton.disabled = (inputField.value === '' || loading == true);
 });
